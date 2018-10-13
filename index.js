@@ -279,13 +279,14 @@ function showLogin() {
 	modal.innerHTML =
 	'<ons-page>' +
   '		<div class="background" style="background-color: #0f2944;"></div>'+
-	'<img style="margin-top: 50%" src="images/image-2.png" alt="HOLA" height="120px"/>'+
-		'<br>' +
-		'<p><ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>' +
-	    '</p><p>' +
+	'<div style="text-align: center">'+
+	'<img style="margin-top: 50%;" src="images/image-2.png" alt="HOLA" height="120px"/>'+
+		// '<br>' +
+		'<p style="text-align: center"><ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>' +
+	    '</p><p style="text-align: center">' +
 			'<ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>'+
 	   '</p>' +
-		 '<p style="margin-top: 30px;"><ons-button modifier="quiet" onclick="hideModal()">Sign in</ons-button></p>'+
+		 '<p style="margin-top: 30px; text-align: center;"><ons-button modifier="quiet" onclick="hideModal()">Sign in</ons-button></p>'+
+		 '</div>'+
 	'</ons-page>';
-
 }
