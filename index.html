@@ -1,7 +1,15 @@
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<script src="index.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body>
 
 <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
   <ons-page>
@@ -26,6 +34,8 @@
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
       <ons-tab label="Forms" icon="ion-edit" page="forms.html"></ons-tab>
       <ons-tab label="Animations" icon="ion-film-marker" page="animations.html"></ons-tab>
+      <ons-tab label="Profile" icon="ion-person" page="profile.html"></ons-tab>
+
     </ons-tabbar>
 
     <script>
@@ -449,6 +459,12 @@
         fade-md
       </ons-list-item>
     </ons-list>
+  </ons-page>
+</template>
+
+<template id="profile.html">
+  <ons-page>
+    
   </ons-page>
 </template>
 
@@ -1120,8 +1136,5 @@
   </ons-page>
 </template>
 
-<style>
-  ons-splitter-side[animation=overlay] {
-    border-left: 1px solid #bbb;
-  }
-</style>
+</body>
+</html>
