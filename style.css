@@ -156,52 +156,79 @@ ons-splitter-side[animation=overlay] {
   }
 
   #sports-category {
-    background-image: url("images/categories/sports2.jpg");
+    background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("images/categories/sports2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'cursive'!important;
+    color: white;
+    text-align: center !important;
+    font-size: 500px !important;
   }
 
   #eat-category {
-    background-image: url("images/categories/food2.jpg");
+    background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1)
+    ), 
+    url("images/categories/food2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'cursive'!important;
+    text-align: center !important;
   }
 
   #party-category {
-    background-image: url("images/categories/party.jpg");
+    background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("images/categories/party.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'cursive';
+    text-align: center;
   }
 
   #travel-category {
-    background-image: url("images/categories/travel.jpg");
+    background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1)
+    ),
+    url("images/categories/travel.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'cursive';
+    text-align: center;
+    font-size: 75%;
   }
 
 #discover-container {
 	height: 100%;
 }
 
-.content {
+ .content {
 	height: 100%;
-}
+} 
 
-.categories {
+ .categories {
 	height: 100%;
 	width: 100%;
 	font-size: 6em;
 	font-style: italic;
 	color: black;
-}
+} 
 
 #sport-button {
   background: 
