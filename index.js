@@ -1,3 +1,4 @@
+var app = {};
 // Profile information.
 // TODO Fetch info from the user
 var user_name = "David Souza";
@@ -133,3 +134,20 @@ function loadFilters() {
 
 	console.log("loadFilters() finished");
 }
+
+app.showFromObject = function () {
+  ons.openActionSheet({
+    // title: 'Share',
+    cancelable: true,
+    buttons: [
+      'WhatsApp',
+      'Twitter',
+			'Facebook',
+			'Copy link',
+      {
+        label: 'Cancel',
+        icon: 'md-close'
+      }
+    ]
+  }).then(function (index) { console.log('index: ', index) });
+};
