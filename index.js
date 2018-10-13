@@ -72,7 +72,7 @@ function loadUserInfo() {
 	countries.sort(function(a,b){
     return b[1] - a[1];
 	});
-	loadMap();
+	//loadMap();
 	showCountriesInTable(countries);
 };
 
