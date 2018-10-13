@@ -15,6 +15,27 @@ var countries = [
       ['France', 1],
       ['RU', 2]
 ];
+var user_gender = "Male"
+
+function getEditInfo() {
+	document.getElementById("form_name").value = user_name;
+	document.getElementById("form_description").value = user_description;
+	document.getElementById("form_phonenumber").value = user_phonenumber;
+	document.getElementById("form_nationality").value = user_nationality.toLowerCase();
+	//document.getElementById("form_name").value = user_name;
+}
+
+function saveData() {
+	user_name = document.getElementById("form_name").value;
+	user_description = document.getElementById("form_description").value;
+	user_phonenumber = document.getElementById("form_phonenumber").value;
+	user_nationality = document.getElementById("form_nationality").value;
+
+	document.getElementById("user_name").innerHTML = user_name;
+	document.getElementById("user_description").innerHTML = user_description;
+	document.getElementById("user_phonenumber").innerHTML = user_phonenumber;
+	document.getElementById("user_nationality").innerHTML = user_nationality;
+}
 
 var user_nationality_code = "mx";
 var user_language_code = "gb";
@@ -27,22 +48,21 @@ setTimeout(function () {
 }, 2000);
 
 function loadUserInfo() {
-	document.getElementById("user-name").innerHTML = user_name;
-	document.getElementById("user-description").innerHTML = user_description;
-	document.getElementById("user-phonenumber").innerHTML = user_phonenumber;
-	document.getElementById("user-nationality").innerHTML = user_nationality;
-	document.getElementById("user-languages").innerHTML = "";
+	console.log("puta");
+	document.getElementById("user_name").innerHTML = user_name;
+	document.getElementById("user_description").innerHTML = user_description;
+	document.getElementById("user_phonenumber").innerHTML = user_phonenumber;
+	document.getElementById("user_nationality").innerHTML = user_nationality;
+	document.getElementById("user_languages").innerHTML = "";
 	for (language of user_languages) {
-		document.getElementById("user-languages").innerHTML += "- " + language;
+		document.getElementById("user_languages").innerHTML += "- " + language;
 	}
-	document.getElementById("user-interests").innerHTML = "";
+	document.getElementById("user_interests").innerHTML = "";
 	for(interest of user_interests) {
-		document.getElementById("user-interests").innerHTML += "- " + interest;
+		document.getElementById("user_interests").innerHTML += "- " + interest;
 	}
 	document.getElementById("number_of_countries").innerHTML = countries.length-2;
 
-	// dummyArray = countries;
-	// dummyArray = dummyArray.splice(2);
 	// //Sort elements by second value.
 	countries.sort(function(a,b){
     return b[1] - a[1];
@@ -52,18 +72,7 @@ function loadUserInfo() {
 };
 
 function showCountriesInTable(countries) {
-	// <tr>
- //        <td>John</td>
- //        <td>Doe</td>
- //      </tr>
- //      <tr>
- //        <td>Mary</td>
- //        <td>Moe</td>
- //      </tr>
- //      <tr>
- //        <td>July</td>
- //        <td>Dooley</td>
- //      </tr>
+	console.log("que pedo");
  	console.log(countries);
  	var i = countries.length-2;
 	while (i > 0) {

@@ -21,3 +21,7 @@ window.fn.pushPage = function (page, anim) {
     document.getElementById('appNavigator').pushPage(page.id, { data: { title: page.title } });
   }
 };
+
+window.fn.popPage = function(page) {
+	document.getElementById('appNavigator').popPage(page.id);
+}
