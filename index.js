@@ -213,7 +213,8 @@ app.showFromObject = function () {
 			cal.addEvent('Volleyball', 'Event for 12 people. Created by Hola App.', 'NTU', '10/17/2018 9:00 am', '10/17/2018 11:00 am');
 			cal.addEvent('Squash', 'Event for 4 people. Created by Hola App.!', 'NTU', '10/17/2018 7:30 pm', '10/17/2018 9:00 pm');
 			cal.addEvent('Cricket', 'Event for 22 people. Created by Hola App.', 'NTU', '10/20/2018 7:30 pm', '10/20/2018 10:00 pm');
-			cal.download();
+			// cal.download();
+			window.open("calendar.ics");
 		}
 
 	});
