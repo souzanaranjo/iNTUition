@@ -11,8 +11,18 @@ body {
   margin: 20px 0;
 }
 
+.profile-card {
+	padding: 20px;
+	text-align: left;
+}
+
+.profile-element {
+	margin: 10px;
+}
+
 /* Profile sidebar */
 .profile-sidebar {
+  text-align: center;
   padding: 20px 0 10px 0;
   background: #fff;
 }

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Hola</title>
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="index.js"></script>
+  <script type="text/javascript" src="default.js"></script>
 </head>
 
-<body>
+<body onload="loadUserInfo()">
 <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
   <ons-page>
     <ons-splitter id="appSplitter">
@@ -32,7 +32,7 @@
     </ons-toolbar>
     <ons-tabbar swipeable id="appTabbar" position="auto">
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
-      <ons-tab label="Forms" icon="ion-edit" page="forms.html"></ons-tab>
+      <ons-tab label="Forms" icon="ion-edit" page="editprofile.html"></ons-tab>
       <ons-tab label="Animations" icon="ion-film-marker" page="animations.html"></ons-tab>
       <ons-tab label="Profile" icon="ion-person" page="profile.html"></ons-tab>
     </ons-tabbar>
@@ -48,43 +48,14 @@
 
 <template id="sidemenu.html">
   <ons-page>
-    <div class="profile-pic">
-      <img src="https://monaca.io/img/logos/download_image_onsenui_01.png">
-    </div>
-
-    <ons-list-title>Access</ons-list-title>
+    <ons-list-title>Account</ons-list-title>
     <ons-list>
       <ons-list-item onclick="fn.loadView(0)">
         <div class="left">
-          <ons-icon fixed-width class="list-item__icon" icon="ion-home, material:md-home"></ons-icon>
+          <ons-icon fixed-width class="list-item__icon" icon="ion-log-out, material:md-home"></ons-icon>
         </div>
         <div class="center">
-          Home
-        </div>
-        <div class="right">
-          <ons-icon icon="fa-link"></ons-icon>
-        </div>
-      </ons-list-item>
-      <ons-list-item onclick="fn.loadView(1)">
-        <div class="left">
-          <ons-icon fixed-width class="list-item__icon" icon="ion-edit, material:md-edit"></ons-icon>
-        </div>
-        <div class="center">
-          Forms
-        </div>
-        <div class="right">
-          <ons-icon icon="fa-link"></ons-icon>
-        </div>
-      </ons-list-item>
-      <ons-list-item onclick="fn.loadView(2)">
-        <div class="left">
-          <ons-icon fixed-width class="list-item__icon" icon="ion-film-marker, material: md-movie-alt"></ons-icon>
-        </div>
-        <div class="center">
-          Animations
-        </div>
-        <div class="right">
-          <ons-icon icon="fa-link"></ons-icon>
+          Log out
         </div>
       </ons-list-item>
     </ons-list>
@@ -212,8 +183,14 @@
   </ons-page>
 </template>
 
-<template id="forms.html">
+<template id="editprofile.html">
   <ons-page id="forms-page">
+    <ons-toolbar>
+      <div class="left">
+        <ons-back-button>Cancel</ons-back-button>
+      </div>
+      <div class="center">Edit profile</div>
+    </ons-toolbar>
     <ons-list>
       <ons-list-header>Text input</ons-list-header>
       <ons-list-item class="input-items">
@@ -468,54 +445,38 @@
       <div class="profile-sidebar">
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
-          <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+          <img src="profileimage.jpg">
         </div>
         <!-- END SIDEBAR USERPIC -->
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
-          <div class="profile-usertitle-name">
-            David Souza
+          <div id="user-name" class="profile-usertitle-name">
+            Nada
           </div>
-          <div class="profile-usertitle-job">
+          <div id="user-description" class="profile-usertitle-job">
             CS Student
           </div>
         </div>
         <!-- END SIDEBAR USER TITLE -->
         <!-- SIDEBAR BUTTONS -->
         <div class="profile-userbuttons">
-          <button type="button" class="btn btn-danger btn-sm">Edit</button>
+          <button class="button--quiet" onclick="fn.pushPage({'id': 'editprofile.html', 'title': 'Edit Profile'}, 'default')">Edit</button>
         </div>
         <!-- END SIDEBAR BUTTONS -->
         <!-- SIDEBAR MENU -->
-        <div class="profile-usermenu">
-          <ul class="nav">
-            <li class="active">
-              Mexican
-            </li>
-            <li>
-              <a href="#">
-              <i class="glyphicon glyphicon-user"></i>
-              Account Settings </a>
-            </li>
-            <li>
-              <a href="#" target="_blank">
-              <i class="glyphicon glyphicon-ok"></i>
-              Tasks </a>
-            </li>
-            <li>
-              <a href="#">
-              <i class="glyphicon glyphicon-flag"></i>
-              Help </a>
-            </li>
-          </ul>
+        <div class="profile-card">
+          <p id="user-phonenumber" class="profile-element"><i class="fa fa-phone "></i> Phone Number </p>
+          <p id="user-nationality" class="profile-element"><i class="icon ion-flag "></i> Nationality </p>
+          <p id="user-languages" class="profile-element"><i class="icon ion-chatbubbles "></i> Languages </p>
+          <p id="user-interests" class="profile-element"><i class="icon ion-heart "></i> Interests </p>
         </div>
         <!-- END MENU -->
       </div>
     </div>
     <div class="col-md-9">
             <div class="profile-content">
-         Making friends from all around the world. <br>
-            <div id="regions_div" style="width: 100%"></div>
+         Making friends from all around the world. <br><br>
+            <div id="regions_div" style="width: 100%; height: 300px"></div>
             </div>
     </div>
   </div>
@@ -1190,6 +1151,6 @@
     </script>
   </ons-page>
 </template>
-
 </body>
+<script type="text/javascript" src="index.js"></script>
 </html>
