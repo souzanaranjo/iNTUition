@@ -12,7 +12,6 @@ body {
 }
 
 .profile-card {
-	padding: 20px;
 	text-align: left;
 }
 
@@ -167,3 +166,55 @@ ons-splitter-side[animation=overlay] {
     background-size: 100%;
     font-family: 'Nunito', sans-serif;
   }
+
+#discover-container {
+	height: 100%;
+}
+
+.content {
+	height: 100%;
+}
+
+.categories {
+	height: 100%;
+	width: 100%;
+	font-size: 6em;
+	font-style: italic;
+	color: black;
+}
+
+#sport-button {
+	background-image: url(images/categories/sports.jpg);
+	background-size: 100% 100%;
+}
+
+#eat-button {
+	background-image: url(images/categories/eat.jpg);
+	background-size: 100% 100%;
+}
+
+#party-button {
+	background-image: url(images/categories/party.jpg);
+	background-size: 100% 100%;
+}
+
+#travel-button {
+	background-image: url(images/categories/travel.jpg);
+	background-size: 100% 100%;
+}
+
+.category-container {
+	height: 22.5%;
+}
+
+.card-format {
+	margin-bottom: 30px;
+}
+
+.next-event {
+	background-color: rgb(117, 255, 121);
+}
+
+.past-event {
+	background-color: rgb(226, 140, 146);
+}

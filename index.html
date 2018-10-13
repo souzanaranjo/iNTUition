@@ -37,20 +37,13 @@
 
 <template id="tabbar.html">
   <ons-page id="tabbar-page">
-    <!-- <ons-toolbar>
-      <div class="center">Home</div>
-      <div class="right">
-        <ons-toolbar-button onclick="fn.toggleMenu()">
-          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-    </ons-toolbar> -->
     <ons-tabbar swipeable id="appTabbar" position="auto">
       <!-- <ons-tab label="Map" icon="ion-edit" page="animations.html"></ons-tab>
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
       <ons-tab label="Profile" icon="ion-film-marker" page="profile.html"></ons-tab> -->
-      <ons-tab icon="ion-home" page="home.html" active></ons-tab>
-      <ons-tab icon="ion-person" page="profile.html"></ons-tab>
+      <ons-tab label="Discover" icon="ion-eye" page="discover.html" active></ons-tab>
+      <ons-tab label="Holas" icon="ion-power" page="holas.html"></ons-tab>
+      <ons-tab label="Profile" icon="ion-person" page="profile.html"></ons-tab>
     </ons-tabbar>
     <!-- <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
@@ -191,49 +184,33 @@
   </ons-page>
 </template>
 
-<template id="home.html">
+
+<template id="discover.html">
   <ons-page>
+    <!-- <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);" id="discover-container"> -->
     <div class="background" style="background-color: #0f2944;"></div>
-      <ons-toolbar modifier="transparent">
+
+    <div class="background"></div>
+    <div style="height: 10%;">
+    <ons-toolbar modifier="transparent">
         <div class="center">
           <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
         </div>
-      </ons-toolbar>
-
-    <ons-card onclick="fn.pushPage({'id': 'sports.html', 'title': 'Filter'}, 'fade-ios'); loadFilters()">
-      <!-- <div class="title">Find new friend</div> -->
-        <div class="content">
-          <ons-row>
-            <ons-col width="85%" vertical-align="center">
-              <div>
-                <h4 style="color: #ffc107; display: inline">Nationality</h4>
-                <div style="display: inline; text-align: right">
-                  <p style="display: inline; float: right">Mexican</p>
-                </div>
-              </div>
-              <br>
-              <div>
-                <h4 style="color: #ffc107; display: inline">Language</h4><p style="float: right; display: inline">Spanish</p>
-              </div>
-            </ons-col>
-            <ons-col width="15%" vertical-align="center">
-              <ons-icon style="color: #ffc107; float:right" icon="fa-arrow-right" size="1em"></ons-icon>
-            </ons-col>
-          </ons-row>
-
-      </div>
-    </ons-card>
-
-    <ons-card>
-      <!-- <div class="title">Find new friend</div> -->
-      <div class="content">
-        <!-- <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'loading.html', 'title': 'fade-ios'}, 'fade-ios'); showModalLoading();"> -->
-          <ons-button style="color: #ffc107" modifier="large--quiet" onclick="showModalLoading();">
-          Go
-        </ons-button>
-      </div>
-    </ons-card>
-
+    </ons-toolbar>
+    </div>
+    <div class="category-container">
+      <button id="sport-button" class="categories">Sport</button>
+    </div>
+    <div class="category-container">
+      <button id="eat-button" class="categories">Eat</button>
+    </div>
+    <div class="category-container">
+      <button id="party-button" class="categories">Party</button>
+    </div>
+    <div class="category-container">
+      <button id="travel-button" class="categories">Travel</button>
+    </div>
+  </div>
     <style>
       .intro {
         text-align: center;
@@ -269,6 +246,91 @@
   </ons-page>
 </template>
 
+<template id="holas.html">
+  <ons-page>
+    <div class="background" style="background-color: #0f2944;"></div>
+      <ons-toolbar modifier="transparent">
+        <div class="center">
+          <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
+        </div>
+      </ons-toolbar>
+
+    <div class="card-format" style="height: 70px; padding: 1px 0 0 0;">
+      <div class="card next-event card--material" style="text-align: center; font-size: 1.8em">
+        Upcoming events</div>
+      </div>
+    </div>
+
+    <div class="card-format" style="height: 100px; padding: 1px 0 0 0;">
+      <div class="card next-event" style="text-align: center">
+        <h2 class="card__title">Tennis at NTU</h2>
+        <div class="card__content">
+          <p>October 17th. 2.30PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-format" style="height: 60px; margin-top: 30px; padding: 1px 0 0 0;">
+      <div class="card past-event card--material" style="text-align: center; font-size: 1.8em">
+        Previous Events</div>
+      </div>
+    </div>
+
+    <div class="card-format" style="height: 100px; padding: 1px 0 0 0;">
+      <div class="card past-event" style="text-align: center;">
+        <h2 class="card__title">Dinner at Spice</h2>
+        <div class="card__content">
+          <p>October 12th. 6PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-format" style="height: 100px; padding: 1px 0 0 0;">
+      <div class="card past-event" style="text-align: center">
+        <h2 class="card__title">Party at Zouk</h2>
+        <div class="card__content">
+          <p>October 13th. 10PM</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <style>
+      .intro {
+        text-align: center;
+        padding: 0 20px;
+        margin-top: 40px;
+      }
+      ons-card {
+        cursor: pointer;
+        color: #333;
+      }
+      .card__title,
+      .card--material__title {
+        font-size: 20px;
+      }
+
+    </style>
+    <ons-modal direction="up">
+  <div style="text-align: center">
+    <!-- <p>
+      <ons-icon icon="md-spinner" size="60px" spin></ons-icon>
+    </p> -->
+    <div class="cssload-thecube">
+      <div class="cssload-cube cssload-c1"></div>
+      <div class="cssload-cube cssload-c2"></div>
+      <div class="cssload-cube cssload-c4"></div>
+      <div class="cssload-cube cssload-c3"></div>
+    </div>
+    <br>
+    <h2>Matching...</h2>
+
+  </div>
+</ons-modal>
+  </ons-page>
+</template>
+
 <template id="editprofile.html">
   <ons-page id="forms-page">
     <ons-toolbar>
@@ -293,6 +355,9 @@
 
     <ons-list-header>Description</ons-list-header>
     <input id="form_description" type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Description">
+
+    <ons-list-header>Phone Number</ons-list-header>
+    <input id="form_age" type="number" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Age">
 
     <ons-list-header>Phone Number</ons-list-header>
     <input id="form_phonenumber" type="text" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Phone Number">
@@ -632,6 +697,8 @@
 
 <template id="profile.html">
   <ons-page>
+    <div class="background" style="background-color: #0f2944;"></div>
+
       <div class="profile-sidebar">
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
@@ -650,16 +717,17 @@
         </div>
         <!-- END SIDEBAR BUTTONS -->
         <!-- SIDEBAR MENU -->
-        <div class="profile-card">
+        <div class="profile-card" style="text-align: center;">
           <p class="profile-element"><i class="fa fa-phone "></i> <span id="user_phonenumber"></span></p>
           <p class="profile-element"><i class="icon ion-flag "></i> <span  id="user_nationality"></span></p>
-          <p class="profile-element"><i class="icon ion-chatbubbles "></i> <span id="user_languages"></span></p>
-          <p class="profile-element"><i class="icon ion-heart "></i> <span id="user_interests"></span></p>
+          <p class="profile-element"><i class="fa fa-birthday-cake "></i> <span  id="user_age"></span></p>
+          <!-- <p class="profile-element"><i class="icon ion-chatbubbles "></i> <span id="user_languages"></span></p>
+          <p class="profile-element"><i class="icon ion-heart "></i> <span id="user_interests"></span></p> -->
         </div>
         <!-- END MENU -->
       </div>
-            <div class="profile-content">
-         Friends from: <span id="number_of_countries">0</span> countries <br><br>
+            <div class="profile-content" style="text-align: center">
+         Connections from: <span id="number_of_countries">0</span> countries <br><br>
             <div id="regions_div" style="width: 100%; height: 300px"></div>
             </div>
             <table class="table table-striped">
@@ -687,8 +755,6 @@
     };
     firebase.initializeApp(config);
   </script>
-  </ons-page>
-</template>
 
 
 <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
