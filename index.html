@@ -276,18 +276,14 @@
 
     </style>
     <ons-modal direction="up">
-  <div style="text-align: center">
-    <div class="cssload-thecube">
-    	<div class="cssload-cube cssload-c1"></div>
-    	<div class="cssload-cube cssload-c2"></div>
-    	<div class="cssload-cube cssload-c4"></div>
-    	<div class="cssload-cube cssload-c3"></div>
-    </div>
-    <br>
-    <h2>Matching...</h2>
-
-  </div>
-</ons-modal>
+      <ons-page>
+        <div class="background" style="background-color: #0f2944;"></div>
+        <img style="margin-top: 50%" src="images/image-2.png" alt="HOLA" height="120px"/>
+        <br>
+        <ons-button onclick="var modal = document.querySelector('ons-modal');modal.hide();">Sign up</ons-button>
+        <ons-button modifier="quiet" onclick="var modal = document.querySelector('ons-modal');modal.hide();">Log in</ons-button>
+      </ons-page>
+    </ons-modal>
   </ons-page>
 </template>
 
@@ -690,12 +686,6 @@
     </style>
   </ons-page>
 
-</template>
-
-<template id="loading.html">
-  <ons-page>
-
-  </ons-page>
 </template>
 
 <template id="filter.html">

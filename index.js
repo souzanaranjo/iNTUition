@@ -67,9 +67,12 @@ var user_nationality_code = "mx";
 var user_language_code = "gb";
 
 var preferred_nationality;
-var language
+var language;
+
+
 
 setTimeout(function () {
+	showModal();
 	loadUserInfo();
 }, 2000);
 
@@ -153,14 +156,6 @@ function loadEvents() {
     + '<div class="card__content">'
     + '<p>' + data.party[0].time + '</p>'
     + '</div></div></div>';
-}
-
-function showModalLoading() {
-  var modal = document.querySelector('ons-modal');
-  modal.show();
-  setTimeout(function() {
-    modal.hide();
-  }, 12000);
 }
 
 function changeCountry() {
@@ -251,4 +246,9 @@ function newBox(activity) {
 	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
 	+ activity.time + '</label>' + '</div>' + '</ons-card>';// +
     // '</div>';
+}
+
+function showModal() {
+  var modal = document.querySelector('ons-modal');
+  modal.show();
 }
