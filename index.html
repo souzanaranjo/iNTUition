@@ -140,7 +140,7 @@
 
 <template id="home.html" style="background-color: #fff9c4">
   <ons-page>
-    <div class="background" style="height: 1000px; background-color: #fff9c4"></div>
+    <div class="background" style="height: 1000px; background-color: white"></div>
     <ons-row style="padding: 10px">
       <ons-col width="15%">
         <ons-button modifier="large--quiet" onclick="fn.loadView(0)">
@@ -152,7 +152,7 @@
       </ons-col>
     </ons-row>
 
-    <ons-card>
+    <ons-card onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'}, 'fade-ios')">
       <!-- <div class="title">Find new friend</div> -->
         <div class="content">
           <ons-row>
@@ -160,7 +160,7 @@
               <div>
                 <h4 style="color: #ffc107; display: inline">Nationality</h4>
                 <div style="display: inline; text-align: right">
-                  <p style="display:inline">Mexican</p>
+                  <p style="display:inline; float: right">Mexican</p>
                 </div>
               </div>
               <br>
@@ -182,7 +182,7 @@
     <ons-card>
       <!-- <div class="title">Find new friend</div> -->
       <div class="content">
-        <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'animations.html', 'title': 'fade-ios'}, 'fade-ios')">
+        <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'filter.html', 'title': 'fade-ios'}, 'fade-ios')">
           Go
         </ons-button>
       </div>
@@ -232,9 +232,6 @@
         font-size: 20px;
       }
 
-      #home.html .page__background {
-        background-color: #ffc107;
-      }
     </style>
   </ons-page>
 </template>
@@ -552,6 +549,129 @@
         fade-md
       </ons-list-item>
     </ons-list>
+  </ons-page>
+</template>
+
+<template id="filter.html">
+  <ons-page>
+    <!-- <div class="container"> -->
+      <!-- <ons-toolbar>
+    <div class="center">Lists</div>
+  </ons-toolbar> -->
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Home</ons-back-button>
+    </div>
+    <div class="center">Filter</div>
+    <div class="right">
+      <ons-toolbar-button id="info-button" onclick="fn.showDialog('popover-dialog')"></ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+
+
+  <ons-list>
+
+    <ons-list-item expandable>
+      <div class="center">
+        <span class="list-item__title">Nationality</span><span class="list-item__subtitle">Spanish</span>
+      </div>
+      <div class="right">
+        <img class="list-item__thumbnail" src="images/flags/es.svg">
+      </div>
+      <div class="expandable-content">
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/es.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Spain</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/mx.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Mexico</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/ve.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Venezuela</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/sg.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Singapore</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+
+      </div>
+    </ons-list-item>
+
+    <ons-list-item expandable>
+      <div class="center">
+        <span class="list-item__title">Language</span><span class="list-item__subtitle">English</span>
+      </div>
+      <div class="right">
+        <img class="list-item__thumbnail" src="images/flags/gb.svg">
+      </div>
+      <div class="expandable-content">
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/gb.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">English</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/es.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Spanish</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/fr.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">French</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="images/flags/cn.svg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Chinese</span><span class="list-item__subtitle"></span>
+          </div>
+        </ons-list-item>
+
+      </div>
+    </ons-list-item>
+
+
+      <!-- <ons-select id="choose-sel">
+        <option value="mexican">Mexican</option>
+        <option value="english">English</option>
+        <option value="french">French</option>
+      </ons-select>
+      <ons-select id="choose-sel">
+        <option value="mexican">Mexican</option>
+        <option value="english">English</option>
+        <option value="french">French</option>
+      </ons-select> -->
+    <!-- </div> -->
   </ons-page>
 </template>
 
