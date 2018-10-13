@@ -160,7 +160,31 @@ ons-splitter-side[animation=overlay] {
   }
 
   #sports-category {
-    background-image: url("images/running.jpg");
+    background-image: url("images/categories/sports2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  #eat-category {
+    background-image: url("images/categories/eat.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  #party-category {
+    background-image: url("images/categories/party.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  #travel-category {
+    background-image: url("images/categories/travel.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -218,3 +242,5 @@ ons-splitter-side[animation=overlay] {
 .past-event {
 	background-color: rgb(226, 140, 146);
 }
+
+.tab-bar { background-color: #0f2944; }
