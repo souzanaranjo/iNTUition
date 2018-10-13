@@ -151,3 +151,55 @@ app.showFromObject = function () {
     ]
   }).then(function (index) { console.log('index: ', index) });
 };
+
+
+function loadSports() {
+	$.getJSON("Activities.json").done(function(data) {
+		console.log(data.sports);
+		data.sports.forEach(function (element) {
+			console.log(element);
+			document.getElementById("container-box-sports").innerHTML += newBox(element);
+		});
+	});
+}
+
+function loadEat() {
+	$.getJSON("Activities.json").done(function(data) {
+		console.log(data.food);
+		data.food.forEach(function (element) {
+			console.log(element);
+			document.getElementById("container-box-eat").innerHTML += newBox(element);
+		});
+	});
+}
+
+function loadTravel() {
+	$.getJSON("Activities.json").done(function(data) {
+		console.log(data.food);
+		data.food.forEach(function (element) {
+			console.log(element);
+			document.getElementById("container-box-travel").innerHTML += newBox(element);
+		});
+	});
+}
+
+function loadParty() {
+	$.getJSON("Activities.json").done(function(data) {
+		console.log(data.party);
+		data.party.forEach(function (element) {
+			console.log(element);
+			document.getElementById("container-box-party").innerHTML += newBox(element);
+		});
+	});
+}
+
+
+
+function newBox(activity) {
+	return '<div class="box">' +
+	'<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<span class="event-people">' + activity.maxP +' p.</span>' +
+	'<label class="event-date">' + activity.time + '</label>' +
+    '</div>';
+}
