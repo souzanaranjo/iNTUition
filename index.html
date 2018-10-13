@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="loadinganim.css">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> -->
+
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -35,7 +37,6 @@
 
 <template id="tabbar.html">
   <ons-page id="tabbar-page">
-    
     <ons-tabbar swipeable id="appTabbar" position="auto">
       <!-- <ons-tab label="Map" icon="ion-edit" page="animations.html"></ons-tab>
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
@@ -142,19 +143,63 @@
   </ons-page>
 </template>
 
+<template id="sports.html">
+  <ons-page>
+    <div class="background" style="background-color: #0f2944;"></div>
+    <ons-toolbar modifier="transparent">
+      <div class="left">
+        <ons-back-button>Discover</ons-back-button>
+      </div>
+      <div class="right">
+        <ons-toolbar-button>Share</ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+    <div class="content">
+      <div id="sports-category" class="category-header">
+        <h1 style="text-align: center; color: white">Sports</h1>
+      </div>
+      <div id="container" class="cols">
+        <div class="box">
+
+        </div>
+        <div class="box1">
+
+        </div>
+        <div class="box">
+
+        </div>
+        <div class="box1"></div>
+        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box"></div>
+        <div class="box1"></div>
+      </div>
+    </div>
+  </ons-page>
+</template>
+
+
 <template id="discover.html">
   <ons-page>
-    <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);" id="discover-container">
+    <!-- <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);" id="discover-container"> -->
+    <div class="background" style="background-color: #0f2944;"></div>
+
     <div class="background"></div>
     <div style="height: 10%;">
     <ons-toolbar modifier="transparent">
         <div class="center">
           <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
-        </div>  
+        </div>
     </ons-toolbar>
     </div>
     <div class="category-container">
-      <button id="sport-button" class="categories">Sport</button>
+      <button id="sport-button" class="categories" onclick="fn.pushPage({'id': 'sports.html', 'title': 'Sports'}, 'default');">Sport</button>
     </div>
     <div class="category-container">
       <button id="eat-button" class="categories">Eat</button>
@@ -203,7 +248,7 @@
 
 <template id="holas.html">
   <ons-page>
-    <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);"></div>
+    <div class="background" style="background-color: #0f2944;"></div>
       <ons-toolbar modifier="transparent">
         <div class="center">
           <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
@@ -652,6 +697,8 @@
 
 <template id="profile.html">
   <ons-page>
+    <!-- <div class="background" style="background-color: #0f2944;"></div> -->
+
       <div class="profile-sidebar">
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
@@ -708,8 +755,6 @@
     };
     firebase.initializeApp(config);
   </script>
-  </ons-page>
-</template>
 
 
 <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
