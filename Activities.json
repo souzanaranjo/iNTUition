@@ -1,118 +1,115 @@
-data = {
-    "sports": [
-        {
-            "type": "Tennis",
-            "time": "8:30 Monday, October 15th",
-            "location": "Tennis Court",
-            "maxP": 4
-        },
-        {
-            "type": "Football",
-            "time": "16:00 16.10.2018",
-            "location": "NTU",
-            "maxP": 16
-        },
-        {
-            "type": "Ping Pong",
-            "time": "8:30 Monday, October 15th",
-            "location": "NTU",
-            "maxP": 2
-        },
-        {
-            "type": "Volleyball",
-            "time": "9:00 17.10.2018",
-            "location": "NTU",
-            "maxP": 12
-        },
-        {
-            "type": "Squash",
-            "time": "7:30 17.10.2018",
-            "location": "NTU",
-            "maxP": 4
-        },
-        {
-            "type": "Cricket",
-            "time": "7:30 20.10.2018",
-            "location": "NTU",
-            "maxP": 22
-        }
-    ],
+{
+	"sports": [{
+			"type": "Tennis",
+			"time": "8:30 Monday, October 15th",
+			"location": "Tennis Court",
+			"maxP": 4
+		},
+		{
+			"type": "Football",
+			"time": "16:00 16.10.2018",
+			"location": "NTU",
+			"maxP": 16
+		},
+		{
+			"type": "Ping Pong",
+			"time": "8:30 Monday, October 15th",
+			"location": "NTU",
+			"maxP": 2
+		},
+		{
+			"type": "Volleyball",
+			"time": "9:00 17.10.2018",
+			"location": "NTU",
+			"maxP": 12
+		},
+		{
+			"type": "Squash",
+			"time": "7:30 17.10.2018",
+			"location": "NTU",
+			"maxP": 4
+		},
+		{
+			"type": "Cricket",
+			"time": "7:30 20.10.2018",
+			"location": "NTU",
+			"maxP": 22
+		}
+	],
 
-    "food": [
-        {
-            "type": "Italian",
-            "time": "12:00 Monday, October 15th",
-            "location": "Ciao Italia",
-            "maxP": 5
-        },
-        {
-            "type": "Japanese",
-            "time": "18:00 16.10.2018",
-            "location": "NTU",
-            "maxP": 3
-        },
-        {
-            "type": "Malay",
-            "time": "1:30 17.10.2018",
-            "location": "NTU",
-            "maxP": 6
-        },
-        {
-            "type": "Fast Food",
-            "time": "11:00 17.10.2018",
-            "location": "NTU",
-            "maxP": 4
-        },
-        {
-            "type": "Chinese",
-            "time": "19:30 18.10.2018",
-            "location": "NTU",
-            "maxP": 8
-        },
-        {
-            "type": "Corean",
-            "time": "2:00 20.10.2018",
-            "location": "NTU",
-            "maxP": 3
-        }
-    ],
-    "party": [
-        {
-            "type": "Welcome Party",
-            "time": "21:00 Monday, October 15th",
-            "location": "Zouk",
-            "maxP": 7
-        },
-        {
-            "type": "Kilo Lounge",
-            "time": "20:00 16.10.2018",
-            "location": "NTU",
-            "maxP": 9
-        },
-        {
-            "type": "Attica",
-            "time": "21:30 17.10.2018",
-            "location": "NTU",
-            "maxP": 6
-        },
-        {
-            "type": "Trace Club",
-            "time": "22:00 17.10.2018",
-            "location": "NTU",
-            "maxP": 4
-        },
-        {
-            "type": "Club Kyo",
-            "time": "19:30 18.10.2018",
-            "location": "NTU",
-            "maxP": 5
-        },
-        {
-            "type": "CANVAS",
-            "time": "20:00 20.10.2018",
-            "location": "NTU",
-            "maxP": 4
-        }
-    ]
+	"food": [{
+			"type": "Italian",
+			"time": "12:00 Monday, October 15th",
+			"location": "Ciao Italia",
+			"maxP": 5
+		},
+		{
+			"type": "Japanese",
+			"time": "18:00 16.10.2018",
+			"location": "NTU",
+			"maxP": 3
+		},
+		{
+			"type": "Malay",
+			"time": "1:30 17.10.2018",
+			"location": "NTU",
+			"maxP": 6
+		},
+		{
+			"type": "Fast Food",
+			"time": "11:00 17.10.2018",
+			"location": "NTU",
+			"maxP": 4
+		},
+		{
+			"type": "Chinese",
+			"time": "19:30 18.10.2018",
+			"location": "NTU",
+			"maxP": 8
+		},
+		{
+			"type": "Korean",
+			"time": "2:00 20.10.2018",
+			"location": "NTU",
+			"maxP": 3
+		}
+	],
+	"party": [{
+			"type": "Welcome Party",
+			"time": "21:00 Monday, October 15th",
+			"location": "Zouk",
+			"maxP": 7
+		},
+		{
+			"type": "Kilo Lounge",
+			"time": "20:00 16.10.2018",
+			"location": "NTU",
+			"maxP": 9
+		},
+		{
+			"type": "Attica",
+			"time": "21:30 17.10.2018",
+			"location": "NTU",
+			"maxP": 6
+		},
+		{
+			"type": "Trace Club",
+			"time": "22:00 17.10.2018",
+			"location": "NTU",
+			"maxP": 4
+		},
+		{
+			"type": "Club Kyo",
+			"time": "19:30 18.10.2018",
+			"location": "NTU",
+			"maxP": 5
+		},
+		{
+			"type": "CANVAS",
+			"time": "20:00 20.10.2018",
+			"location": "NTU",
+			"maxP": 4
+		}
+	]
 
 }
