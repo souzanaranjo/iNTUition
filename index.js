@@ -196,14 +196,27 @@ app.showFromObject = function () {
     buttons: [
       'WhatsApp',
       'Twitter',
-			'Facebook',
 			'Copy link',
+			'Export to calendar',
       {
         label: 'Cancel',
         icon: 'md-close'
       }
     ]
-  }).then(function (index) { console.log('index: ', index) });
+  }).then(function (index) {
+		console.log('index: ', index);
+		if (index === 3) {
+			cal = ics();
+	    cal.addEvent('Tennis', 'Event for 4 people. Created by Hola App.', 'NTU', '10/15/2018 8:30 pm', '10/15/2018 9:30 pm');
+	    cal.addEvent('Football', 'Event for 16 people. Created by Hola App.', 'NTU', '10/16/2018 4:30 pm', '10/16/2018 5:30 pm');
+	    cal.addEvent('Ping Pong', 'Event for 2 people. Created by Hola App.', 'NTU', '10/15/2018 6:30 pm', '10/15/2018 7:00 pm');
+			cal.addEvent('Volleyball', 'Event for 12 people. Created by Hola App.', 'NTU', '10/17/2018 9:00 am', '10/17/2018 11:00 am');
+			cal.addEvent('Squash', 'Event for 4 people. Created by Hola App.!', 'NTU', '10/17/2018 7:30 pm', '10/17/2018 9:00 pm');
+			cal.addEvent('Cricket', 'Event for 22 people. Created by Hola App.', 'NTU', '10/20/2018 7:30 pm', '10/20/2018 10:00 pm');
+			cal.download();
+		}
+
+	});
 };
 
 
