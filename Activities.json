@@ -1,4 +1,4 @@
-data = {
+{
     "sports": [
         {
             "type": "Tennis",
@@ -70,7 +70,7 @@ data = {
             "maxP": 8
         },
         {
-            "type": "Corean",
+            "type": "Korean",
             "time": "2:00 20.10.2018",
             "location": "NTU",
             "maxP": 3

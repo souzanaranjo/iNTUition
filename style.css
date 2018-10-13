@@ -144,13 +144,9 @@ ons-splitter-side[animation=overlay] {
   }
   .box {
       margin: 3px;
-      height:187px;
+      height: 187px;
       background:#BFBFBF;
-  }
-  .box1 {
-      /* margin-bottom: 20px; */
-      height:187px;
-      background:#0f2944;
+      width: 100%;
   }
 
   .category-header {

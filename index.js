@@ -30,7 +30,7 @@ function addEvent() {
 	tempTime = document.getElementById("event_time").value;
 	tempDate = document.getElementById("event_date").value;
 
-	document.getElementById("upcoming_events").innerHTML += 
+	document.getElementById("upcoming_events").innerHTML +=
 	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
     + '<div class="card next-event" style="text-align: center">'
     + '<h2 class="card__title">' + tempName + " at " + tempLocation + '</h2>'
@@ -130,7 +130,7 @@ function loadMap() {
 // End of code related to map
 
 function loadEvents() {
-	document.getElementById("upcoming_events").innerHTML += 
+	document.getElementById("upcoming_events").innerHTML +=
 	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
     + '<div class="card next-event" style="text-align: center">'
     + '<h2 class="card__title">' + data.sports[0].type + " at " + data.sports[0].location + '</h2>'
@@ -138,7 +138,7 @@ function loadEvents() {
     + '<p>' + data.sports[0].time + '</p>'
     + '</div></div></div>';
 
-    document.getElementById("past_events").innerHTML += 
+    document.getElementById("past_events").innerHTML +=
 	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
     + '<div class="card past-event" style="text-align: center">'
     + '<h2 class="card__title">' + data.food[0].type + " at " + data.food[0].location + '</h2>'
@@ -146,7 +146,7 @@ function loadEvents() {
     + '<p>' + data.food[0].time + '</p>'
     + '</div></div></div>';
 
-    document.getElementById("past_events").innerHTML += 
+    document.getElementById("past_events").innerHTML +=
 	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
     + '<div class="card past-event" style="text-align: center">'
     + '<h2 class="card__title">' + data.party[0].type + " at " + data.party[0].location + '</h2>'
@@ -241,10 +241,14 @@ function loadParty() {
 
 
 function newBox(activity) {
-	return '<div class="box">' +
-	'<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<div class="box">' +
+	return '<ons-card style="height: 187px">' +
+	'<div class="title">' + activity.type + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
 	// '<label class="event-description">Testing testing</label>' +
-	'<span class="event-people">' + activity.maxP +' p.</span>' +
-	'<label class="event-date">' + activity.time + '</label>' +
-    '</div>';
+	'<div class="content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + activity.maxP + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ activity.time + '</label>' + '</div>' + '</ons-card>';// +
+    // '</div>';
 }
