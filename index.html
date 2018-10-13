@@ -247,29 +247,22 @@
       </div>
       <div class="center">Edit profile</div>
       <div class="right">
-        <button>Save</button>
+        <button class="button--quiet">Save</button>
       </div>
     </ons-toolbar>
     <ons-list>
-      <ons-list-header>Text input</ons-list-header>
-      <ons-list-item class="input-items">
-        <div class="left">
-          <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
+      <!-- Default form register -->
+    <ons-list-header>Name</ons-list-header>
+    <div class="form-row mb-4">
+        <div class="col">
+            <!-- First name -->
+            <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Name">
         </div>
-        <label class="center">
-        <ons-input id="name-input" float maxlength="20" placeholder="Name"></ons-input>
-        </label>
-      </ons-list-item>
-        <ons-list-item class="input-items">
-        <div class="left">
-          <ons-icon icon="fa-question-circle-o" class="list-item__icon"></ons-icon>
-        </div>
-        <label class="center">
-        <ons-search-input id="search-input" maxlength="20" placeholder="Search"></ons-search-input>
-      </label>
-      </ons-list-item>
+    </div>
 
-      
+    <ons-list-header>Email</ons-list-header>
+    <!-- E-mail -->
+    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
 
       <ons-list-header>Nationality</ons-list-header>
       <ons-list-item>
@@ -517,7 +510,9 @@
           Blue
         </label>
       </ons-list-item>
-    <style>
+
+      <!-- Sign up button -->
+      <style>
       .right-icon {
         margin-left: 10px;
       }
