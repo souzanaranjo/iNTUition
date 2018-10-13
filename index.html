@@ -6,11 +6,11 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="index.js"></script>
 </head>
 
 <body>
-
 <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
   <ons-page>
     <ons-splitter id="appSplitter">
@@ -35,9 +35,7 @@
       <ons-tab label="Forms" icon="ion-edit" page="forms.html"></ons-tab>
       <ons-tab label="Animations" icon="ion-film-marker" page="animations.html"></ons-tab>
       <ons-tab label="Profile" icon="ion-person" page="profile.html"></ons-tab>
-
     </ons-tabbar>
-
     <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
         if (event.target.matches('#appTabbar')) {
@@ -464,7 +462,64 @@
 
 <template id="profile.html">
   <ons-page>
-    
+    <div class="container">
+    <div class="row profile">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            David Souza
+          </div>
+          <div class="profile-usertitle-job">
+            CS Student
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+        <!-- SIDEBAR BUTTONS -->
+        <div class="profile-userbuttons">
+          <button type="button" class="btn btn-danger btn-sm">Edit</button>
+        </div>
+        <!-- END SIDEBAR BUTTONS -->
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu">
+          <ul class="nav">
+            <li class="active">
+              Mexican
+            </li>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-user"></i>
+              Account Settings </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+              <i class="glyphicon glyphicon-ok"></i>
+              Tasks </a>
+            </li>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-flag"></i>
+              Help </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+    <div class="col-md-9">
+            <div class="profile-content">
+         Making friends from all around the world. <br>
+            <div id="regions_div" style="width: 100%"></div>
+            </div>
+    </div>
+  </div>
+</div>
   </ons-page>
 </template>
 
