@@ -168,7 +168,7 @@ ons-splitter-side[animation=overlay] {
   }
 
   #eat-category {
-    background-image: url("images/categories/eat.jpg");
+    background-image: url("images/categories/food2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -208,28 +208,35 @@ ons-splitter-side[animation=overlay] {
 }
 
 #sport-button {
-	background-image: url(images/categories/sports.jpg);
+	background-image: url(images/categories/sports2.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;}
+  background-size: 100%;
+  font-family: 'cursive';
+}
 
 #eat-button {
-	background-image: url(images/categories/eat.jpg);
+	background-image: url(images/categories/food2.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;}
+  background-size: 100%;
+  font-family: 'cursive';}
 
 #party-button {
 	background-image: url(images/categories/party.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;}
+  background-size: 100%;
+  font-family: 'cursive';
+  }
 
 #travel-button {
 	background-image: url(images/categories/travel.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;}
+  background-size: 100%;
+  font-family: 'cursive';
+  }
 
 .category-container {
 	height: 22.5%;
