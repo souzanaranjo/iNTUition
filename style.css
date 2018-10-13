@@ -135,21 +135,26 @@ ons-splitter-side[animation=overlay] {
 .categories {
 	height: 100%;
 	width: 100%; 
+	font-size: 6em;
+	font-style: italic;
+	color: black;
 }
 
 #sport-button {
 	background-image: url(images/categories/sports.jpg);
+	background-size: 100% 100%;
 }
 
 #eat-button {
-
+	background-image: url(images/categories/eat.jpg);
+	background-size: 100% 100%;
 }
 
 #party-button {
-
+	background-image: url(images/categories/party.jpg);
+	background-size: 100% 100%;
 }
 
 .category-container {
 	height: 30%;
-	padding: 3%;
 }
