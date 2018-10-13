@@ -1421,6 +1421,44 @@
 
 </style>
 
+
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBJOnkVTrHgpOXJ5k7KOFmVdJrMFviCSk",
+    authDomain: "hack-ntu-dream-team.firebaseapp.com",
+    databaseURL: "https://hack-ntu-dream-team.firebaseio.com",
+    projectId: "hack-ntu-dream-team",
+    storageBucket: "hack-ntu-dream-team.appspot.com",
+    messagingSenderId: "1016429289769"
+  };
+  firebase.initializeApp(config);
+
+  database = firebase.database();
+  var ref = database.ref('results');
+  ref.on('value', gotData, errData);
+
+  function gotData(data){
+    var scores = data.val();
+    var keys = Object.keys(scores);
+    console.log(keys);
+  }
+  function errData(err){
+    console.log('Error!');
+    console.log(err);
+  }
+
+  // var bigOne = document.getElementById('bigOne');
+  // var dbRef = firebase.database().ref().child('text');
+  // dbRef.on('value', snap => bigOne.innerText = snap.val());
+
+
+
+
+
+</script>
+
 </body>
 <script type="text/javascript" src="index.js"></script>
 </html>
