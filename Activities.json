@@ -1,9 +1,9 @@
-{
+data = {
     "sports": [
         {
             "type": "Tennis",
-            "time": "8:30 15.10.2018",
-            "location": "NTU",
+            "time": "8:30 Monday, October 15th",
+            "location": "Tennis Court",
             "maxP": 4
         },
         {
@@ -14,7 +14,7 @@
         },
         {
             "type": "Ping Pong",
-            "time": "8:30 15.10.2018",
+            "time": "8:30 Monday, October 15th",
             "location": "NTU",
             "maxP": 2
         },
@@ -41,8 +41,8 @@
     "food": [
         {
             "type": "Italian",
-            "time": "12:00 15.10.2018",
-            "location": "NTU",
+            "time": "12:00 Monday, October 15th",
+            "location": "Ciao Italia",
             "maxP": 5
         },
         {
@@ -78,9 +78,9 @@
     ],
     "party": [
         {
-            "type": "Zouk",
-            "time": "21:00 15.10.2018",
-            "location": "NTU",
+            "type": "Welcome Party",
+            "time": "21:00 Monday, October 15th",
+            "location": "Zouk",
             "maxP": 7
         },
         {

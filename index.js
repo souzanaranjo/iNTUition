@@ -18,6 +18,27 @@ var countries = [
       ['RU', 2]
 ];
 var user_gender = "Male"
+var tempjson;
+var tempName;
+var tempDate;
+var tempLocation;
+var tempTime;
+
+function addEvent() {
+	tempName = document.getElementById("event_name").value;
+	tempLocation = document.getElementById("event_location").value;
+	tempTime = document.getElementById("event_time").value;
+	tempDate = document.getElementById("event_date").value;
+
+	document.getElementById("upcoming_events").innerHTML += 
+	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
+    + '<div class="card next-event" style="text-align: center">'
+    + '<h2 class="card__title">' + tempName + " at " + tempLocation + '</h2>'
+    + '<div class="card__content">'
+    + '<p>' + tempTime + " " + tempDate + '</p>'
+    + '</div></div></div>';
+
+}
 
 function getEditInfo() {
 	document.getElementById("form_name").value = user_name;
@@ -53,7 +74,6 @@ setTimeout(function () {
 }, 2000);
 
 function loadUserInfo() {
-	console.log("puta");
 	document.getElementById("user_name").innerHTML = user_name;
 	document.getElementById("user_description").innerHTML = user_description;
 	document.getElementById("user_phonenumber").innerHTML = user_phonenumber;
@@ -109,6 +129,31 @@ function loadMap() {
 
 // End of code related to map
 
+function loadEvents() {
+	document.getElementById("upcoming_events").innerHTML += 
+	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
+    + '<div class="card next-event" style="text-align: center">'
+    + '<h2 class="card__title">' + data.sports[0].type + " at " + data.sports[0].location + '</h2>'
+    + '<div class="card__content">'
+    + '<p>' + data.sports[0].time + '</p>'
+    + '</div></div></div>';
+
+    document.getElementById("past_events").innerHTML += 
+	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
+    + '<div class="card past-event" style="text-align: center">'
+    + '<h2 class="card__title">' + data.food[0].type + " at " + data.food[0].location + '</h2>'
+    + '<div class="card__content">'
+    + '<p>' + data.food[0].time + '</p>'
+    + '</div></div></div>';
+
+    document.getElementById("past_events").innerHTML += 
+	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
+    + '<div class="card past-event" style="text-align: center">'
+    + '<h2 class="card__title">' + data.party[0].type + " at " + data.party[0].location + '</h2>'
+    + '<div class="card__content">'
+    + '<p>' + data.party[0].time + '</p>'
+    + '</div></div></div>';
+}
 
 function showModalLoading() {
   var modal = document.querySelector('ons-modal');
