@@ -25,19 +25,21 @@
 
 <template id="tabbar.html">
   <ons-page id="tabbar-page">
-    <ons-toolbar>
+    <!-- <ons-toolbar>
       <div class="center">Home</div>
       <div class="right">
         <ons-toolbar-button onclick="fn.toggleMenu()">
           <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
         </ons-toolbar-button>
       </div>
-    </ons-toolbar>
-    <ons-tabbar swipeable id="appTabbar" position="auto">
+    </ons-toolbar> -->
+    <ons-tabbar swipeable id="appTabbar" position="auto" hide-tabs>
+      <!-- <ons-tab label="Map" icon="ion-edit" page="animations.html"></ons-tab>
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
-      <ons-tab label="Forms" icon="ion-edit" page="editprofile.html"></ons-tab>
-      <ons-tab label="Animations" icon="ion-film-marker" page="animations.html"></ons-tab>
-      <ons-tab label="Profile" icon="ion-person" page="profile.html"></ons-tab>
+      <ons-tab label="Profile" icon="ion-film-marker" page="profile.html"></ons-tab> -->
+      <ons-tab icon="ion-film-marker" page="profile.html"></ons-tab>
+      <ons-tab icon="ion-home" page="home.html" active></ons-tab>
+      <ons-tab icon="ion-edit" page="animations.html"></ons-tab>
     </ons-tabbar>
     <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
@@ -137,13 +139,61 @@
   </ons-page>
 </template>
 
-<template id="home.html">
+<template id="home.html" style="background-color: #fff9c4">
   <ons-page>
-    <p class="intro">
-      This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
-    </p>
+    <div class="background" style="height: 1000px; background-color: #fff9c4"></div>
+    <ons-row style="padding: 10px">
+      <ons-col width="15%">
+        <ons-button modifier="large--quiet" onclick="fn.loadView(0)">
+          <ons-icon style="color: #ffc107" icon="md-account-circle" size="50px"></ons-icon>
+        </ons-button>
+      </ons-col>
+      <ons-col style="text-align: center" width="85%">
+        <img src="images/hola-logo.jpeg" alt="HOLA" height="50px"/>
+      </ons-col>
+    </ons-row>
 
-    <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
+    <ons-card>
+      <!-- <div class="title">Find new friend</div> -->
+        <div class="content">
+          <ons-row>
+            <ons-col width="85%" vertical-align="center">
+              <div>
+                <h4 style="color: #ffc107; display: inline">Nationality</h4>
+                <div style="display: inline; text-align: right">
+                  <p style="display:inline">Mexican</p>
+                </div>
+              </div>
+              <br>
+              <div>
+                <h4 style="color: #ffc107; display: inline">Language</h4><p style="float: right; display: inline">Spanish</p>
+              </div>
+            </ons-col>
+            <ons-col width="15%" vertical-align="center">
+              <ons-icon style="color: #ffc107; float:right" icon="fa-arrow-right" size="1em"></ons-icon>
+            </ons-col>
+          </ons-row>
+
+
+
+
+      </div>
+    </ons-card>
+
+    <ons-card>
+      <!-- <div class="title">Find new friend</div> -->
+      <div class="content">
+        <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'animations.html', 'title': 'fade-ios'}, 'fade-ios')">
+          Go
+        </ons-button>
+      </div>
+    </ons-card>
+
+    <!-- <p class="intro">
+      This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
+    </p> -->
+
+    <!-- <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
       <div class="title">Pull Hook</div>
       <div class="content">Simple "pull to refresh" functionality to update data.</div>
     </ons-card>
@@ -166,7 +216,7 @@
     <ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
       <div class="title">Progress</div>
       <div class="content">Linear progress, circular progress and spinners.</div>
-    </ons-card>
+    </ons-card> -->
 
     <style>
       .intro {
@@ -181,6 +231,10 @@
       .card__title,
       .card--material__title {
         font-size: 20px;
+      }
+
+      #home.html .page__background {
+        background-color: #ffc107;
       }
     </style>
   </ons-page>
@@ -406,7 +460,7 @@
       }
     </style>
   </ons-page>
-</template>
+</template> -->
 
 <template id="animations.html">
   <ons-page>
@@ -1174,7 +1228,7 @@
         this.querySelector('ons-toolbar div.center').textContent = this.data.title;
       }
     </script>
-    
+
 <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -1190,6 +1244,14 @@
   </script>
   </ons-page>
 </template>
+
+<style>
+  ons-splitter-side[animation=overlay] {
+    border-left: 1px solid #bbb;
+  }
+
+</style>
+
 </body>
 <script type="text/javascript" src="index.js"></script>
 </html>
