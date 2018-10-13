@@ -6,12 +6,14 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="loadinganim.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="default.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 </head>
 
 <body>
@@ -39,7 +41,7 @@
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
       <ons-tab label="Profile" icon="ion-film-marker" page="profile.html"></ons-tab> -->
       <ons-tab icon="ion-home" page="home.html" active></ons-tab>
-      <ons-tab onclick="loadUserInfo()" icon="ion-person" page="profile.html"></ons-tab>
+      <ons-tab icon="ion-person" page="profile.html"></ons-tab>
     </ons-tabbar>
     <!-- <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
@@ -139,21 +141,16 @@
   </ons-page>
 </template>
 
-<template id="home.html" style="background-color: #fff9c4">
+<template id="home.html">
   <ons-page>
-    <div class="background" style="height: 1000px; background-color: white"></div>
-    <ons-row style="padding: 10px">
-      <ons-col width="15%">
-        <ons-button modifier="large--quiet" onclick="fn.loadView(0)">
-          <ons-icon style="color: #ffc107" icon="md-account-circle" size="50px"></ons-icon>
-        </ons-button>
-      </ons-col>
-      <ons-col style="text-align: center" width="85%">
-        <img src="images/hola-logo.jpeg" alt="HOLA" height="50px"/>
-      </ons-col>
-    </ons-row>
+    <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);"></div>
+      <ons-toolbar modifier="transparent">
+        <div class="center">
+          <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
+        </div>
+      </ons-toolbar>
 
-    <ons-card onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'}, 'fade-ios')">
+    <ons-card onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'}, 'fade-ios'); loadFilters()">
       <!-- <div class="title">Find new friend</div> -->
         <div class="content">
           <ons-row>
@@ -161,7 +158,7 @@
               <div>
                 <h4 style="color: #ffc107; display: inline">Nationality</h4>
                 <div style="display: inline; text-align: right">
-                  <p style="display:inline; float: right">Mexican</p>
+                  <p style="display: inline; float: right">Mexican</p>
                 </div>
               </div>
               <br>
@@ -174,16 +171,14 @@
             </ons-col>
           </ons-row>
 
-
-
-
       </div>
     </ons-card>
 
     <ons-card>
       <!-- <div class="title">Find new friend</div> -->
       <div class="content">
-        <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'filter.html', 'title': 'fade-ios'}, 'fade-ios')">
+        <!-- <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'loading.html', 'title': 'fade-ios'}, 'fade-ios'); showModalLoading();"> -->
+          <ons-button style="color: #ffc107" modifier="large--quiet" onclick="showModalLoading();">
           Go
         </ons-button>
       </div>
@@ -205,6 +200,22 @@
       }
 
     </style>
+    <ons-modal direction="up">
+  <div style="text-align: center">
+    <!-- <p>
+      <ons-icon icon="md-spinner" size="60px" spin></ons-icon>
+    </p> -->
+    <div class="cssload-thecube">
+    	<div class="cssload-cube cssload-c1"></div>
+    	<div class="cssload-cube cssload-c2"></div>
+    	<div class="cssload-cube cssload-c4"></div>
+    	<div class="cssload-cube cssload-c3"></div>
+    </div>
+    <br>
+    <h2>Matching...</h2>
+
+  </div>
+</ons-modal>
   </ons-page>
 </template>
 
@@ -450,6 +461,13 @@
       }
     </style>
   </ons-page>
+
+</template>
+
+<template id="loading.html">
+  <ons-page>
+
+  </ons-page>
 </template>
 
 <template id="filter.html">
@@ -474,13 +492,13 @@
 
     <ons-list-item expandable>
       <div class="center">
-        <span class="list-item__title">Nationality</span><span class="list-item__subtitle">Spanish</span>
+        <span class="list-item__title">Nationality</span><span id="user-nationality-filter" class="list-item__subtitle"></span>
       </div>
       <div class="right">
-        <img class="list-item__thumbnail" src="images/flags/es.svg">
+        <img id="user-nationality-flag" class="list-item__thumbnail" src="">
       </div>
       <div class="expandable-content">
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/es.svg">
           </div>
@@ -488,7 +506,7 @@
             <span class="list-item__title">Spain</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/mx.svg">
           </div>
@@ -496,7 +514,7 @@
             <span class="list-item__title">Mexico</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/ve.svg">
           </div>
@@ -504,7 +522,7 @@
             <span class="list-item__title">Venezuela</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/sg.svg">
           </div>
@@ -518,13 +536,13 @@
 
     <ons-list-item expandable>
       <div class="center">
-        <span class="list-item__title">Language</span><span class="list-item__subtitle">English</span>
+        <span class="list-item__title">Language</span><span id="user-language-filter" class="list-item__subtitle"></span>
       </div>
       <div class="right">
-        <img class="list-item__thumbnail" src="images/flags/gb.svg">
+        <img id="user-language-flag" class="list-item__thumbnail" src="">
       </div>
       <div class="expandable-content">
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/gb.svg">
           </div>
@@ -532,7 +550,7 @@
             <span class="list-item__title">English</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/es.svg">
           </div>
@@ -540,7 +558,7 @@
             <span class="list-item__title">Spanish</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/fr.svg">
           </div>
@@ -548,7 +566,7 @@
             <span class="list-item__title">French</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/cn.svg">
           </div>
@@ -559,19 +577,6 @@
 
       </div>
     </ons-list-item>
-
-
-      <!-- <ons-select id="choose-sel">
-        <option value="mexican">Mexican</option>
-        <option value="english">English</option>
-        <option value="french">French</option>
-      </ons-select>
-      <ons-select id="choose-sel">
-        <option value="mexican">Mexican</option>
-        <option value="english">English</option>
-        <option value="french">French</option>
-      </ons-select> -->
-    <!-- </div> -->
   </ons-page>
 </template>
 
@@ -634,5 +639,43 @@
   </script>
   </ons-page>
 </template>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBJOnkVTrHgpOXJ5k7KOFmVdJrMFviCSk",
+    authDomain: "hack-ntu-dream-team.firebaseapp.com",
+    databaseURL: "https://hack-ntu-dream-team.firebaseio.com",
+    projectId: "hack-ntu-dream-team",
+    storageBucket: "hack-ntu-dream-team.appspot.com",
+    messagingSenderId: "1016429289769"
+  };
+  firebase.initializeApp(config);
+
+  database = firebase.database();
+  var ref = database.ref('results');
+  ref.on('value', gotData, errData);
+
+  function gotData(data){
+    var scores = data.val();
+    var keys = Object.keys(scores);
+    console.log(keys);
+  }
+  function errData(err){
+    console.log('Error!');
+    console.log(err);
+  }
+
+  // var bigOne = document.getElementById('bigOne');
+  // var dbRef = firebase.database().ref().child('text');
+  // dbRef.on('value', snap => bigOne.innerText = snap.val());
+
+</script>
+
 </body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="default.js"></script>
 </html>

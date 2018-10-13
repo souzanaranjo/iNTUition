@@ -36,7 +36,19 @@ function saveData() {
 	document.getElementById("user_phonenumber").innerHTML = user_phonenumber;
 	document.getElementById("user_nationality").innerHTML = user_nationality;
 }
+
+var user_nationality_code = "mx";
+var user_language_code = "gb";
+
+var preferred_nationality;
+var language
+
+setTimeout(function () {
+	loadUserInfo();
+}, 2000);
+
 function loadUserInfo() {
+	console.log("puta");
 	document.getElementById("user_name").innerHTML = user_name;
 	document.getElementById("user_description").innerHTML = user_description;
 	document.getElementById("user_phonenumber").innerHTML = user_phonenumber;
@@ -51,17 +63,16 @@ function loadUserInfo() {
 	}
 	document.getElementById("number_of_countries").innerHTML = countries.length-2;
 
-	// dummyArray = countries; 
-	// dummyArray = dummyArray.splice(2);
 	// //Sort elements by second value.
 	countries.sort(function(a,b){
     return b[1] - a[1];
 	});
-	//loadMap();
+	// loadMap();
 	showCountriesInTable(countries);
 };
 
 function showCountriesInTable(countries) {
+	console.log("que pedo");
  	console.log(countries);
  	var i = countries.length-2;
 	while (i > 0) {
@@ -78,7 +89,7 @@ function loadMap() {
         // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
         'mapsApiKey': 'AIzaSyCPkWmUcfyfhk6qY9AlRnxfutGMI_nYtRA'
       });
-		
+
       google.charts.setOnLoadCallback(drawRegionsMap);
 
       function drawRegionsMap() {
@@ -91,3 +102,29 @@ function loadMap() {
 }
 
 // End of code related to map
+
+
+function showModalLoading() {
+  var modal = document.querySelector('ons-modal');
+  modal.show();
+  setTimeout(function() {
+    modal.hide();
+  }, 12000);
+}
+
+function changeCountry() {
+	document.getElementById("user-language-filter").innerHTML = "" + user_languages[0];
+	document.getElementById("user-language-flag").src = "images/flags/" + user_language_code + ".svg";
+}
+
+function loadFilters() {
+	// load default filter parameters
+	setTimeout(function () {
+		document.getElementById("user-language-filter").innerHTML = "" + user_languages[0];
+		document.getElementById("user-language-flag").src = "images/flags/" + user_language_code + ".svg";
+		document.getElementById("user-nationality-filter").innerHTML = user_nationality;
+		document.getElementById("user-nationality-flag").src = "images/flags/" + user_nationality_code + ".svg";
+	}, 500);
+
+	console.log("loadFilters() finished");
+}
