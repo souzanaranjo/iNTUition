@@ -8,6 +8,9 @@
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="default.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body onload="loadUserInfo()">
@@ -475,9 +478,31 @@
     </div>
     <div class="col-md-9">
             <div class="profile-content">
-         Making friends from all around the world. <br><br>
+         Friends from: <span id="number_of_countries">0</span> countries <br><br>
             <div id="regions_div" style="width: 100%; height: 300px"></div>
             </div>
+            <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+      </tr>
+    </tbody>
+  </table>
     </div>
   </div>
 </div>

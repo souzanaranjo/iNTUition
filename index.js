@@ -7,14 +7,14 @@ var user_nationality = "Mexican";
 var user_languages = ["English", "Spanish", "Italian", "French"];
 var user_interests = ["Sports", "Play the piano", "Science", "Raggaeton Music"];
 var countries = [
-	  ['Country', 'Popularity'],
+	  ['Country', 'Number of friends'],
   	  ['Default', 0],
-      ['Germany', 1],
+      ['Germany', 3],
       ['Brazil', 1],
       ['Canada', 1],
       ['France', 1],
       ['RU', 2]
-    ];
+];
 
 function loadUserInfo() {
 	document.getElementById("user-name").innerHTML = user_name;
@@ -29,8 +29,39 @@ function loadUserInfo() {
 	for(interest of user_interests) {
 		document.getElementById("user-interests").innerHTML += "- " + interest;
 	}
+	document.getElementById("number_of_countries").innerHTML = countries.length-2;
+
+	// dummyArray = countries; 
+	// dummyArray = dummyArray.splice(2);
+	// //Sort elements by second value.
+	countries.sort(function(a,b){
+    return b[1] - a[1];
+	});
 	loadMap();
+	showCountriesInTable(countries);
 };
+
+function showCountriesInTable(countries) {
+	dummyArray = countries;
+	dummyArray = dummyArray.splice(-2);
+
+	// <tr>
+ //        <td>John</td>
+ //        <td>Doe</td>
+ //      </tr>
+ //      <tr>
+ //        <td>Mary</td>
+ //        <td>Moe</td>
+ //      </tr>
+ //      <tr>
+ //        <td>July</td>
+ //        <td>Dooley</td>
+ //      </tr>
+
+	// for (country of dummyArray) {
+	// 	document.getElementById("countriestable").innerHTML += 
+	// }
+}
 
 function loadMap() {
 	google.charts.load('current', {
