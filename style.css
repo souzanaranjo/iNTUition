@@ -208,34 +208,59 @@ ons-splitter-side[animation=overlay] {
 }
 
 #sport-button {
-	background-image: url(images/categories/sports2.jpg);
+  background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+	url(images/categories/sports2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
   font-family: 'cursive';
+  
+  color: white;
 }
 
 #eat-button {
-	background-image: url(images/categories/food2.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  font-family: 'cursive';}
-
-#party-button {
-	background-image: url(images/categories/party.jpg);
+  background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+  url(images/categories/food2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
   font-family: 'cursive';
+  color: white;}
+
+#party-button {
+	background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+  url(images/categories/party.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: 'cursive';
+  color: white;
   }
 
 #travel-button {
-	background-image: url(images/categories/travel.jpg);
+  background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+  url(images/categories/travel.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
   font-family: 'cursive';
+  color: white;
   }
 
 .category-container {
