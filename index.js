@@ -4,6 +4,7 @@ var user_name = "David Souza";
 var user_description = "CS Student";
 var user_phonenumber = "+65 12348765"
 var user_nationality = "Mexican";
+var user_age = 22;
 var user_languages = ["English", "Spanish", "Italian", "French"];
 var user_interests = ["Sports", "Play the piano", "Science", "Raggaeton Music"];
 var countries = [
@@ -21,6 +22,7 @@ function getEditInfo() {
 	document.getElementById("form_name").value = user_name;
 	document.getElementById("form_description").value = user_description;
 	document.getElementById("form_phonenumber").value = user_phonenumber;
+	document.getElementById("form_age").value = String(user_age);
 	document.getElementById("form_nationality").value = user_nationality.toLowerCase();
 	//document.getElementById("form_name").value = user_name;
 }
@@ -30,11 +32,13 @@ function saveData() {
 	user_description = document.getElementById("form_description").value;
 	user_phonenumber = document.getElementById("form_phonenumber").value;
 	user_nationality = document.getElementById("form_nationality").value;
+	user_age = document.getElementById("form_age").value;
 
 	document.getElementById("user_name").innerHTML = user_name;
 	document.getElementById("user_description").innerHTML = user_description;
 	document.getElementById("user_phonenumber").innerHTML = user_phonenumber;
 	document.getElementById("user_nationality").innerHTML = user_nationality;
+	document.getElementById("user_age").innerHTML = String(user_age) + " years old";
 }
 
 var user_nationality_code = "mx";
@@ -53,21 +57,22 @@ function loadUserInfo() {
 	document.getElementById("user_description").innerHTML = user_description;
 	document.getElementById("user_phonenumber").innerHTML = user_phonenumber;
 	document.getElementById("user_nationality").innerHTML = user_nationality;
-	document.getElementById("user_languages").innerHTML = "";
-	for (language of user_languages) {
-		document.getElementById("user_languages").innerHTML += "- " + language;
-	}
-	document.getElementById("user_interests").innerHTML = "";
-	for(interest of user_interests) {
-		document.getElementById("user_interests").innerHTML += "- " + interest;
-	}
+	document.getElementById("user_age").innerHTML = String(user_age) + " years old";
+	// document.getElementById("user_languages").innerHTML = "";
+	// for (language of user_languages) {
+	// 	document.getElementById("user_languages").innerHTML += "- " + language;
+	// }
+	// document.getElementById("user_interests").innerHTML = "";
+	// for(interest of user_interests) {
+	// 	document.getElementById("user_interests").innerHTML += "- " + interest;
+	// }
 	document.getElementById("number_of_countries").innerHTML = countries.length-2;
 
 	// //Sort elements by second value.
 	countries.sort(function(a,b){
     return b[1] - a[1];
 	});
-	// loadMap();
+	//loadMap();
 	showCountriesInTable(countries);
 };
 
