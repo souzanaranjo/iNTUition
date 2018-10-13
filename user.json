@@ -1,0 +1,60 @@
+{
+    "users":[
+        {
+            "name": "Garrett Bond",
+            "age" : 22,
+            "ocupation": "Business",
+            "nationality": "English",
+            "image": "images/people/0.jpg"
+        },
+        {
+            "name": "Alexi Shannon",
+            "age" : 21,
+            "ocupation": "Architecture",
+            "nationality": "Spain",
+            "image": "images/people/1.jpg"
+        },{
+            "name": "Bridget Hebert",
+            "age" : 20,
+            "ocupation": "Law",
+            "nationality": "German",
+            "image": "images/people/3.jpg"
+        },{
+            "name": "Brooke Brewer",
+            "age" : 22,
+            "ocupation": "Business",
+            "nationality": "USA",
+            "image": "images/people/4.jpg"
+        },{
+            "name": "Patrycja Kline",
+            "age" : 24,
+            "ocupation": "Economics",
+            "nationality": "Netherlands",
+            "image": "images/people/5.jpg"
+        },{
+            "name": "Isma Murillo",
+            "age" : 21,
+            "ocupation": "History",
+            "nationality": "Colombia",
+            "image": "images/people/6.jpg"
+        },{
+            "name": "Dante Pate",
+            "age" : 20,
+            "ocupation": "Sport Management",
+            "nationality": "Brazil",
+            "image": "images/people/7.jpg"
+        },{
+            "name": "Elora Donovan",
+            "age" : 24,
+            "ocupation": "Medicine",
+            "nationality": "Singapore",
+            "image": "images/people/8.jpg"
+        },{
+            "name": "Garfield Ford",
+            "age" : 21,
+            "ocupation": "Business",
+            "nationality": "China",
+            "image": "images/people/9.jpg"
+        }
+    ]
+}
