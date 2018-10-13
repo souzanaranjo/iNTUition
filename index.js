@@ -19,6 +19,8 @@ var countries = [
 var user_nationality_code = "mx";
 var user_language_code = "gb";
 
+var preferred_nationality;
+var language
 
 setTimeout(function () {
 	loadUserInfo();
@@ -111,6 +113,8 @@ function loadFilters() {
 	setTimeout(function () {
 		document.getElementById("user-language-filter").innerHTML = "" + user_languages[0];
 		document.getElementById("user-language-flag").src = "images/flags/" + user_language_code + ".svg";
+		document.getElementById("user-nationality-filter").innerHTML = user_nationality;
+		document.getElementById("user-nationality-flag").src = "images/flags/" + user_nationality_code + ".svg";
 	}, 500);
 
 	console.log("loadFilters() finished");
