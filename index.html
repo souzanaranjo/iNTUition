@@ -226,7 +226,7 @@
         <h1 style="text-align: center; color: white">Travel</h1>
       </div>
       <div id="container-box-travel" class="cols">
-        
+
       </div>
     </div>
   </ons-page>
@@ -277,9 +277,6 @@
     </style>
     <ons-modal direction="up">
   <div style="text-align: center">
-    <!-- <p>
-      <ons-icon icon="md-spinner" size="60px" spin></ons-icon>
-    </p> -->
     <div class="cssload-thecube">
     	<div class="cssload-cube cssload-c1"></div>
     	<div class="cssload-cube cssload-c2"></div>
@@ -294,6 +291,20 @@
   </ons-page>
 </template>
 
+<template id="dialogHolaCreated.html">
+  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 10px;">
+      <p>
+        Your Hola has been created!
+      </p>
+
+      <p>
+        <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+</template>
+
 <template id="createEvent.html">
   <ons-page>
     <div class="background" style="background-color: #0f2944;"></div>
@@ -302,7 +313,7 @@
         <ons-back-button>Cancel</ons-back-button>
       </div>
       <div class="right">
-        <button onclick="addEvent(); fn.popPage('createEvent.html');" class="button--quiet">Create</button>
+        <button onclick="addEvent(); fn.popPage('createEvent.html'); ons.notification.toast('Your Hola has been created!', { timeout: 3000, animation: 'fall' });" class="button--quiet">Create</button>
       </div>
     </ons-toolbar>
     <div class="content">
@@ -374,7 +385,7 @@
         </div>
       </ons-toolbar>
 
-      
+
     </ons-toolbar>
 
     <div class="card-format" style="height: 60px; padding: 1px 0 0 0;">
