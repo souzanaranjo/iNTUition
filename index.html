@@ -1,8 +1,16 @@
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-<script src="index.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="index.js"></script>
+</head>
 
+<body>
 <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
   <ons-page>
     <ons-splitter id="appSplitter">
@@ -30,7 +38,6 @@
       <ons-tab icon="ion-home" page="home.html" active></ons-tab>
       <ons-tab icon="ion-edit" page="animations.html"></ons-tab>
     </ons-tabbar>
-
     <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
         if (event.target.matches('#appTabbar')) {
@@ -158,15 +165,55 @@
   </ons-page>
 </template>
 
-<template id="home.html">
+<template id="home.html" style="background-color: #fff9c4">
   <ons-page>
-    <ons-row style="padding: 1em">
-      <ons-col width="15%" text-center>
+    <div class="background" style="height: 1000px; background-color: #fff9c4"></div>
+    <ons-row style="padding: 10px">
+      <ons-col width="15%">
         <ons-button modifier="large--quiet" onclick="fn.loadView(0)">
-          <ons-icon icon="md-account-circle" size="50px"></ons-icon>
+          <ons-icon style="color: #ffc107" icon="md-account-circle" size="50px"></ons-icon>
         </ons-button>
       </ons-col>
+      <ons-col style="text-align: center" width="85%">
+        <img src="images/hola-logo.jpeg" alt="HOLA" height="50px"/>
+      </ons-col>
     </ons-row>
+
+    <ons-card>
+      <!-- <div class="title">Find new friend</div> -->
+        <div class="content">
+          <ons-row>
+            <ons-col width="85%" vertical-align="center">
+              <div>
+                <h4 style="color: #ffc107; display: inline">Nationality</h4>
+                <div style="display: inline; text-align: right">
+                  <p style="display:inline">Mexican</p>
+                </div>
+              </div>
+              <br>
+              <div>
+                <h4 style="color: #ffc107; display: inline">Language</h4><p style="float: right; display: inline">Spanish</p>
+              </div>
+            </ons-col>
+            <ons-col width="15%" vertical-align="center">
+              <ons-icon style="color: #ffc107; float:right" icon="fa-arrow-right" size="1em"></ons-icon>
+            </ons-col>
+          </ons-row>
+
+
+
+
+      </div>
+    </ons-card>
+
+    <ons-card>
+      <!-- <div class="title">Find new friend</div> -->
+      <div class="content">
+        <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'animations.html', 'title': 'fade-ios'}, 'fade-ios')">
+          Go
+        </ons-button>
+      </div>
+    </ons-card>
 
     <!-- <p class="intro">
       This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
@@ -211,11 +258,15 @@
       .card--material__title {
         font-size: 20px;
       }
+
+      #home.html .page__background {
+        background-color: #ffc107;
+      }
     </style>
   </ons-page>
 </template>
 
-<template id="profile.html">
+<!-- <template id="profile.html">
   <ons-page id="profile-page">
     <ons-list>
       <ons-list-header>Text input</ons-list-header>
@@ -429,7 +480,7 @@
       }
     </style>
   </ons-page>
-</template>
+</template> -->
 
 <template id="animations.html">
   <ons-page>
@@ -460,6 +511,69 @@
         fade-md
       </ons-list-item>
     </ons-list>
+  </ons-page>
+</template>
+
+<template id="profile.html">
+  <ons-page>
+    <div class="container">
+    <div class="row profile">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img src="https://randomuser.me/api/portraits/men/15.jpg" class="img-responsive" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            David Souza
+          </div>
+          <div class="profile-usertitle-job">
+            CS Student
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+        <!-- SIDEBAR BUTTONS -->
+        <div class="profile-userbuttons">
+          <button type="button" class="btn btn-danger btn-sm">Edit</button>
+        </div>
+        <!-- END SIDEBAR BUTTONS -->
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu">
+          <ul class="nav">
+            <li class="active">
+              Mexican
+            </li>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-user"></i>
+              Account Settings </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+              <i class="glyphicon glyphicon-ok"></i>
+              Tasks </a>
+            </li>
+            <li>
+              <a href="#">
+              <i class="glyphicon glyphicon-flag"></i>
+              Help </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+    <div class="col-md-9">
+            <div class="profile-content">
+         Making friends from all around the world. <br>
+            <div id="regions_div" style="width: 100%"></div>
+            </div>
+    </div>
+  </div>
+</div>
   </ons-page>
 </template>
 
@@ -1135,4 +1249,8 @@
   ons-splitter-side[animation=overlay] {
     border-left: 1px solid #bbb;
   }
+
 </style>
+
+</body>
+</html>
