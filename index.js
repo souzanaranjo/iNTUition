@@ -70,9 +70,11 @@ var preferred_nationality;
 var language;
 
 
-
 setTimeout(function () {
 	showModal();
+}, 1000);
+
+setTimeout(function () {
 	loadUserInfo();
 }, 2000);
 
@@ -250,5 +252,28 @@ function newBox(activity) {
 
 function showModal() {
   var modal = document.querySelector('ons-modal');
-  modal.show();
+	modal.show();
+	document.querySelector("#appTabbar").hide();
+}
+
+function hideModal() {
+	var modal = document.querySelector('ons-modal');
+	modal.hide();
+	document.querySelector("#appTabbar").show();
+}
+
+function showLogin() {
+	var modal = document.querySelector('#initial-modal');
+	modal.innerHTML =
+	'<ons-page>' +
+  '		<div class="background" style="background-color: #0f2944;"></div>'+
+	'<img style="margin-top: 50%" src="images/image-2.png" alt="HOLA" height="120px"/>'+
+		'<br>' +
+		'<p><ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>' +
+	    '</p><p>' +
+			'<ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>'+
+	   '</p>' +
+		 '<p style="margin-top: 30px;"><ons-button modifier="quiet" onclick="hideModal()">Sign in</ons-button></p>'+
+	'</ons-page>';
+
 }
