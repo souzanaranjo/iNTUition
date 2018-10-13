@@ -14,18 +14,21 @@
 
 <template id="tabbar.html">
   <ons-page id="tabbar-page">
-    <ons-toolbar>
+    <!-- <ons-toolbar>
       <div class="center">Home</div>
       <div class="right">
         <ons-toolbar-button onclick="fn.toggleMenu()">
           <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
         </ons-toolbar-button>
       </div>
-    </ons-toolbar>
-    <ons-tabbar swipeable id="appTabbar" position="auto">
+    </ons-toolbar> -->
+    <ons-tabbar swipeable id="appTabbar" position="auto" hide-tabs>
+      <!-- <ons-tab label="Map" icon="ion-edit" page="animations.html"></ons-tab>
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
-      <ons-tab label="Forms" icon="ion-edit" page="forms.html"></ons-tab>
-      <ons-tab label="Animations" icon="ion-film-marker" page="animations.html"></ons-tab>
+      <ons-tab label="Profile" icon="ion-film-marker" page="profile.html"></ons-tab> -->
+      <ons-tab icon="ion-film-marker" page="profile.html"></ons-tab>
+      <ons-tab icon="ion-home" page="home.html" active></ons-tab>
+      <ons-tab icon="ion-edit" page="animations.html"></ons-tab>
     </ons-tabbar>
 
     <script>
@@ -157,11 +160,19 @@
 
 <template id="home.html">
   <ons-page>
-    <p class="intro">
-      This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
-    </p>
+    <ons-row style="padding: 1em">
+      <ons-col width="15%" text-center>
+        <ons-button modifier="large--quiet" onclick="fn.loadView(0)">
+          <ons-icon icon="md-account-circle" size="50px"></ons-icon>
+        </ons-button>
+      </ons-col>
+    </ons-row>
 
-    <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
+    <!-- <p class="intro">
+      This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
+    </p> -->
+
+    <!-- <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
       <div class="title">Pull Hook</div>
       <div class="content">Simple "pull to refresh" functionality to update data.</div>
     </ons-card>
@@ -184,7 +195,7 @@
     <ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
       <div class="title">Progress</div>
       <div class="content">Linear progress, circular progress and spinners.</div>
-    </ons-card>
+    </ons-card> -->
 
     <style>
       .intro {
@@ -204,8 +215,8 @@
   </ons-page>
 </template>
 
-<template id="forms.html">
-  <ons-page id="forms-page">
+<template id="profile.html">
+  <ons-page id="profile-page">
     <ons-list>
       <ons-list-header>Text input</ons-list-header>
       <ons-list-item class="input-items">
