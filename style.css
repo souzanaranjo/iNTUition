@@ -209,23 +209,27 @@ ons-splitter-side[animation=overlay] {
 
 #sport-button {
 	background-image: url(images/categories/sports.jpg);
-	background-size: 100% 100%;
-}
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;}
 
 #eat-button {
 	background-image: url(images/categories/eat.jpg);
-	background-size: 100% 100%;
-}
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;}
 
 #party-button {
 	background-image: url(images/categories/party.jpg);
-	background-size: 100% 100%;
-}
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;}
 
 #travel-button {
 	background-image: url(images/categories/travel.jpg);
-	background-size: 100% 100%;
-}
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;}
 
 .category-container {
 	height: 22.5%;
