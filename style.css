@@ -124,4 +124,32 @@ ons-splitter-side[animation=overlay] {
     border-left: 1px solid #bbb;
   }
 
-  	
+#discover-container {
+	height: 100%;
+}
+
+.content {
+	height: 100%;
+}
+
+.categories {
+	height: 100%;
+	width: 100%; 
+}
+
+#sport-button {
+	background-image: url(images/categories/sports.jpg);
+}
+
+#eat-button {
+
+}
+
+#party-button {
+
+}
+
+.category-container {
+	height: 30%;
+	padding: 3%;
+}

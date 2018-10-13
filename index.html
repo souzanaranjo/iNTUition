@@ -35,20 +35,14 @@
 
 <template id="tabbar.html">
   <ons-page id="tabbar-page">
-    <!-- <ons-toolbar>
-      <div class="center">Home</div>
-      <div class="right">
-        <ons-toolbar-button onclick="fn.toggleMenu()">
-          <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-    </ons-toolbar> -->
+    
     <ons-tabbar swipeable id="appTabbar" position="auto">
       <!-- <ons-tab label="Map" icon="ion-edit" page="animations.html"></ons-tab>
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
       <ons-tab label="Profile" icon="ion-film-marker" page="profile.html"></ons-tab> -->
-      <ons-tab icon="ion-home" page="home.html" active></ons-tab>
-      <ons-tab icon="ion-person" page="profile.html"></ons-tab>
+      <ons-tab label="Discover" icon="ion-eye" page="discover.html" active></ons-tab>
+      <ons-tab label="Holas" icon="ion-power" page="holas.html"></ons-tab>
+      <ons-tab label="Profile" icon="ion-person" page="profile.html"></ons-tab>
     </ons-tabbar>
     <!-- <script>
       ons.getScriptPage().addEventListener('prechange', function(event) {
@@ -148,7 +142,63 @@
   </ons-page>
 </template>
 
-<template id="home.html">
+<template id="discover.html">
+  <ons-page>
+    <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);" id="discover-container">
+    <div class="background"></div>
+    <div style="height: 10%;">
+    <ons-toolbar modifier="transparent">
+        <div class="center">
+          <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
+        </div>  
+    </ons-toolbar>
+    </div>
+    <div class="category-container">
+      <button id="sport-button" class="categories">Sport</button>
+    </div>
+    <div class="category-container">
+      <button id="eat-button" class="categories">Eat</button>
+    </div>
+    <div class="category-container">
+      <button id="party-button" class="categories">Party</button>
+    </div>
+  </div>
+    <style>
+      .intro {
+        text-align: center;
+        padding: 0 20px;
+        margin-top: 40px;
+      }
+      ons-card {
+        cursor: pointer;
+        color: #333;
+      }
+      .card__title,
+      .card--material__title {
+        font-size: 20px;
+      }
+
+    </style>
+    <ons-modal direction="up">
+  <div style="text-align: center">
+    <!-- <p>
+      <ons-icon icon="md-spinner" size="60px" spin></ons-icon>
+    </p> -->
+    <div class="cssload-thecube">
+    	<div class="cssload-cube cssload-c1"></div>
+    	<div class="cssload-cube cssload-c2"></div>
+    	<div class="cssload-cube cssload-c4"></div>
+    	<div class="cssload-cube cssload-c3"></div>
+    </div>
+    <br>
+    <h2>Matching...</h2>
+
+  </div>
+</ons-modal>
+  </ons-page>
+</template>
+
+<template id="holas.html">
   <ons-page>
     <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);"></div>
       <ons-toolbar modifier="transparent">
@@ -213,10 +263,10 @@
       <ons-icon icon="md-spinner" size="60px" spin></ons-icon>
     </p> -->
     <div class="cssload-thecube">
-    	<div class="cssload-cube cssload-c1"></div>
-    	<div class="cssload-cube cssload-c2"></div>
-    	<div class="cssload-cube cssload-c4"></div>
-    	<div class="cssload-cube cssload-c3"></div>
+      <div class="cssload-cube cssload-c1"></div>
+      <div class="cssload-cube cssload-c2"></div>
+      <div class="cssload-cube cssload-c4"></div>
+      <div class="cssload-cube cssload-c3"></div>
     </div>
     <br>
     <h2>Matching...</h2>
