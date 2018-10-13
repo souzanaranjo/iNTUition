@@ -1149,6 +1149,20 @@
         this.querySelector('ons-toolbar div.center').textContent = this.data.title;
       }
     </script>
+    
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBBJOnkVTrHgpOXJ5k7KOFmVdJrMFviCSk",
+      authDomain: "hack-ntu-dream-team.firebaseapp.com",
+      databaseURL: "https://hack-ntu-dream-team.firebaseio.com",
+      projectId: "hack-ntu-dream-team",
+      storageBucket: "hack-ntu-dream-team.appspot.com",
+      messagingSenderId: "1016429289769"
+    };
+    firebase.initializeApp(config);
+  </script>
   </ons-page>
 </template>
 </body>
