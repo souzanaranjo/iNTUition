@@ -131,8 +131,19 @@ function loadMap() {
 }
 
 // End of code related to map
+function loadSports() {
+	$.getJSON("Activities.json").done(function(data) {
+		console.log(data.sports);
+		data.sports.forEach(function (element) {
+			console.log(element);
+			document.getElementById("container-box-sports").innerHTML += newBox(element);
+		});
+	});
+}
 
 function loadEvents() {
+	$.getJSON("Activities.json").done(function(data) {
+	console.log(data.sports);
 	document.getElementById("upcoming_events").innerHTML +=
 	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
     + '<div class="card next-event" style="text-align: center">'
@@ -156,6 +167,7 @@ function loadEvents() {
     + '<div class="card__content">'
     + '<p>' + data.party[0].time + '</p>'
     + '</div></div></div>';
+    });
 }
 
 function changeCountry() {
