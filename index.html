@@ -210,39 +210,46 @@
         </div>
       </ons-toolbar>
 
-    <ons-card onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'}, 'fade-ios'); loadFilters()">
-      <!-- <div class="title">Find new friend</div> -->
-        <div class="content">
-          <ons-row>
-            <ons-col width="85%" vertical-align="center">
-              <div>
-                <h4 style="color: #ffc107; display: inline">Nationality</h4>
-                <div style="display: inline; text-align: right">
-                  <p style="display: inline; float: right">Mexican</p>
-                </div>
-              </div>
-              <br>
-              <div>
-                <h4 style="color: #ffc107; display: inline">Language</h4><p style="float: right; display: inline">Spanish</p>
-              </div>
-            </ons-col>
-            <ons-col width="15%" vertical-align="center">
-              <ons-icon style="color: #ffc107; float:right" icon="fa-arrow-right" size="1em"></ons-icon>
-            </ons-col>
-          </ons-row>
-
+    <div class="card-format" style="height: 70px; padding: 1px 0 0 0;">
+      <div class="card next-event card--material" style="text-align: center; font-size: 1.8em">
+        Upcoming events</div>
       </div>
-    </ons-card>
+    </div>
 
-    <ons-card>
-      <!-- <div class="title">Find new friend</div> -->
-      <div class="content">
-        <!-- <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'loading.html', 'title': 'fade-ios'}, 'fade-ios'); showModalLoading();"> -->
-          <ons-button style="color: #ffc107" modifier="large--quiet" onclick="showModalLoading();">
-          Go
-        </ons-button>
+    <div class="card-format" style="height: 100px; padding: 1px 0 0 0;">
+      <div class="card next-event" style="text-align: center">
+        <h2 class="card__title">Tennis at NTU</h2>
+        <div class="card__content">
+          <p>October 17th. 2.30PM</p>
+        </div>
       </div>
-    </ons-card>
+    </div>
+
+    <div class="card-format" style="height: 60px; margin-top: 30px; padding: 1px 0 0 0;">
+      <div class="card past-event card--material" style="text-align: center; font-size: 1.8em">
+        Previous Events</div>
+      </div>
+    </div>
+
+    <div class="card-format" style="height: 100px; padding: 1px 0 0 0;">
+      <div class="card past-event" style="text-align: center;">
+        <h2 class="card__title">Dinner at Spice</h2>
+        <div class="card__content">
+          <p>October 12th. 6PM</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-format" style="height: 100px; padding: 1px 0 0 0;">
+      <div class="card past-event" style="text-align: center">
+        <h2 class="card__title">Party at Zouk</h2>
+        <div class="card__content">
+          <p>October 13th. 10PM</p>
+        </div>
+      </div>
+    </div>
+
+
 
     <style>
       .intro {
@@ -663,7 +670,7 @@
         </div>
         <!-- END SIDEBAR BUTTONS -->
         <!-- SIDEBAR MENU -->
-        <div class="profile-card">
+        <div class="profile-card" style="text-align: center;">
           <p class="profile-element"><i class="fa fa-phone "></i> <span id="user_phonenumber"></span></p>
           <p class="profile-element"><i class="icon ion-flag "></i> <span  id="user_nationality"></span></p>
           <p class="profile-element"><i class="fa fa-birthday-cake "></i> <span  id="user_age"></span></p>
@@ -672,8 +679,8 @@
         </div>
         <!-- END MENU -->
       </div>
-            <div class="profile-content">
-         Friends from: <span id="number_of_countries">0</span> countries <br><br>
+            <div class="profile-content" style="text-align: center">
+         Connections from: <span id="number_of_countries">0</span> countries <br><br>
             <div id="regions_div" style="width: 100%; height: 300px"></div>
             </div>
             <table class="table table-striped">

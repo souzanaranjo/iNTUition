@@ -12,7 +12,6 @@ body {
 }
 
 .profile-card {
-	padding: 20px;
 	text-align: left;
 }
 
@@ -162,4 +161,16 @@ ons-splitter-side[animation=overlay] {
 
 .category-container {
 	height: 22.5%;
+}
+
+.card-format {
+	margin-bottom: 30px;
+}
+
+.next-event {
+	background-color: rgb(117, 255, 121);
+}
+
+.past-event {
+	background-color: rgb(226, 140, 146);
 }
