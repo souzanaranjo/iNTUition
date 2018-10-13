@@ -5,15 +5,14 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="loadinganim.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="default.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body onload="loadUserInfo()">
+<body>
 <ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
   <ons-page>
     <ons-splitter id="appSplitter">
@@ -38,6 +37,7 @@
       <ons-tab label="Home" icon="ion-home" page="home.html" active></ons-tab>
       <ons-tab label="Profile" icon="ion-film-marker" page="profile.html"></ons-tab> -->
       <ons-tab icon="ion-home" page="home.html" active></ons-tab>
+      <!-- <ons-tab onclick="loadUserInfo()" icon="ion-person" page="profile.html"></ons-tab> -->
       <ons-tab icon="ion-person" page="profile.html"></ons-tab>
     </ons-tabbar>
     <!-- <script>
@@ -138,21 +138,16 @@
   </ons-page>
 </template>
 
-<template id="home.html" style="background-color: #fff9c4">
+<template id="home.html">
   <ons-page>
-    <div class="background" style="height: 1000px; background-color: white"></div>
-    <ons-row style="padding: 10px">
-      <ons-col width="15%">
-        <ons-button modifier="large--quiet" onclick="fn.loadView(0)">
-          <ons-icon style="color: #ffc107" icon="md-account-circle" size="50px"></ons-icon>
-        </ons-button>
-      </ons-col>
-      <ons-col style="text-align: center" width="85%">
-        <img src="images/hola-logo.jpeg" alt="HOLA" height="50px"/>
-      </ons-col>
-    </ons-row>
+    <div class="background" style="background-image: linear-gradient(#fff350, #ffc107);"></div>
+      <ons-toolbar modifier="transparent">
+        <div class="center">
+          <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
+        </div>
+      </ons-toolbar>
 
-    <ons-card onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'}, 'fade-ios')">
+    <ons-card onclick="fn.pushPage({'id': 'filter.html', 'title': 'Filter'}, 'fade-ios'); loadFilters()">
       <!-- <div class="title">Find new friend</div> -->
         <div class="content">
           <ons-row>
@@ -160,7 +155,7 @@
               <div>
                 <h4 style="color: #ffc107; display: inline">Nationality</h4>
                 <div style="display: inline; text-align: right">
-                  <p style="display:inline; float: right">Mexican</p>
+                  <p style="display: inline; float: right">Mexican</p>
                 </div>
               </div>
               <br>
@@ -173,49 +168,19 @@
             </ons-col>
           </ons-row>
 
-
-
-
       </div>
     </ons-card>
 
     <ons-card>
       <!-- <div class="title">Find new friend</div> -->
       <div class="content">
-        <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'filter.html', 'title': 'fade-ios'}, 'fade-ios')">
+        <!-- <ons-button style="color: #ffc107" modifier="large--quiet" onclick="fn.pushPage({'id': 'loading.html', 'title': 'fade-ios'}, 'fade-ios'); showModalLoading();"> -->
+          <ons-button style="color: #ffc107" modifier="large--quiet" onclick="showModalLoading();">
           Go
         </ons-button>
       </div>
     </ons-card>
 
-    <!-- <p class="intro">
-      This is a kitchen sink example that shows off the components of Onsen UI.<br><br>
-    </p> -->
-
-    <!-- <ons-card onclick="fn.pushPage({'id': 'pullHook.html', 'title': 'PullHook'})">
-      <div class="title">Pull Hook</div>
-      <div class="content">Simple "pull to refresh" functionality to update data.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'dialogs.html', 'title': 'Dialogs'})">
-      <div class="title">Dialogs</div>
-      <div class="content">Components and utility methods to display many types of dialogs.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'buttons.html', 'title': 'Buttons'})">
-      <div class="title">Buttons</div>
-      <div class="content">Different styles for buttons, floating action buttons and speed dials.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'carousel.html', 'title': 'Carousel'})">
-      <div class="title">Carousel</div>
-      <div class="content">Customizable carousel that can be optionally fullscreen.</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'infiniteScroll.html', 'title': 'Infinite Scroll'})">
-      <div class="title">Infinite Scroll</div>
-      <div class="content">Two types of infinite lists: "Load More" and "Lazy Repeat".</div>
-    </ons-card>
-    <ons-card onclick="fn.pushPage({'id': 'progress.html', 'title': 'Progress'})">
-      <div class="title">Progress</div>
-      <div class="content">Linear progress, circular progress and spinners.</div>
-    </ons-card> -->
 
     <style>
       .intro {
@@ -233,6 +198,22 @@
       }
 
     </style>
+    <ons-modal direction="up">
+  <div style="text-align: center">
+    <!-- <p>
+      <ons-icon icon="md-spinner" size="60px" spin></ons-icon>
+    </p> -->
+    <div class="cssload-thecube">
+    	<div class="cssload-cube cssload-c1"></div>
+    	<div class="cssload-cube cssload-c2"></div>
+    	<div class="cssload-cube cssload-c4"></div>
+    	<div class="cssload-cube cssload-c3"></div>
+    </div>
+    <br>
+    <h2>Matching...</h2>
+
+  </div>
+</ons-modal>
   </ons-page>
 </template>
 
@@ -518,37 +499,11 @@
       }
     </style>
   </ons-page>
-</template> -->
+</template>
 
-<template id="animations.html">
+<template id="loading.html">
   <ons-page>
-    <ons-list>
-      <ons-list-header>Transitions</ons-list-header>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'none'}, 'none')">
-        none
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'default'}, 'default')">
-        default
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'slide-ios'}, 'slide-ios')">
-        slide-ios
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'slide-md'}, 'slide-md')">
-        slide-md
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'lift-ios'}, 'lift-ios')">
-        lift-ios
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'lift-md'}, 'lift-md')">
-        lift-md
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'fade-ios'}, 'fade-ios')">
-        fade-ios
-      </ons-list-item>
-      <ons-list-item modifier="chevron" onclick="fn.pushPage({'id': 'transition.html', 'title': 'fade-md'}, 'fade-md')">
-        fade-md
-      </ons-list-item>
-    </ons-list>
+
   </ons-page>
 </template>
 
@@ -574,13 +529,13 @@
 
     <ons-list-item expandable>
       <div class="center">
-        <span class="list-item__title">Nationality</span><span class="list-item__subtitle">Spanish</span>
+        <span class="list-item__title">Nationality</span><span id="user-nationality-filter" class="list-item__subtitle">Spanish</span>
       </div>
       <div class="right">
-        <img class="list-item__thumbnail" src="images/flags/es.svg">
+        <img id="user-nationality-flag" class="list-item__thumbnail" src="images/flags/es.svg">
       </div>
       <div class="expandable-content">
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/es.svg">
           </div>
@@ -588,7 +543,7 @@
             <span class="list-item__title">Spain</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/mx.svg">
           </div>
@@ -596,7 +551,7 @@
             <span class="list-item__title">Mexico</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/ve.svg">
           </div>
@@ -604,7 +559,7 @@
             <span class="list-item__title">Venezuela</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/sg.svg">
           </div>
@@ -618,13 +573,13 @@
 
     <ons-list-item expandable>
       <div class="center">
-        <span class="list-item__title">Language</span><span class="list-item__subtitle">English</span>
+        <span class="list-item__title">Language</span><span id="user-language-filter" class="list-item__subtitle">Spanish</span>
       </div>
       <div class="right">
-        <img class="list-item__thumbnail" src="images/flags/gb.svg">
+        <img id="user-language-flag" class="list-item__thumbnail" src="images/flags/es.svg">
       </div>
       <div class="expandable-content">
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/gb.svg">
           </div>
@@ -632,7 +587,7 @@
             <span class="list-item__title">English</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/es.svg">
           </div>
@@ -640,7 +595,7 @@
             <span class="list-item__title">Spanish</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/fr.svg">
           </div>
@@ -648,7 +603,7 @@
             <span class="list-item__title">French</span><span class="list-item__subtitle"></span>
           </div>
         </ons-list-item>
-        <ons-list-item>
+        <ons-list-item tappable>
           <div class="left">
             <img class="list-item__thumbnail" src="images/flags/cn.svg">
           </div>
@@ -659,19 +614,6 @@
 
       </div>
     </ons-list-item>
-
-
-      <!-- <ons-select id="choose-sel">
-        <option value="mexican">Mexican</option>
-        <option value="english">English</option>
-        <option value="french">French</option>
-      </ons-select>
-      <ons-select id="choose-sel">
-        <option value="mexican">Mexican</option>
-        <option value="english">English</option>
-        <option value="french">French</option>
-      </ons-select> -->
-    <!-- </div> -->
   </ons-page>
 </template>
 
@@ -1460,5 +1402,9 @@
 </script>
 
 </body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="default.js"></script>
 <script type="text/javascript" src="index.js"></script>
+
 </html>
