@@ -42,9 +42,6 @@ function loadUserInfo() {
 };
 
 function showCountriesInTable(countries) {
-	dummyArray = countries;
-	dummyArray = dummyArray.splice(-2);
-
 	// <tr>
  //        <td>John</td>
  //        <td>Doe</td>
@@ -57,10 +54,13 @@ function showCountriesInTable(countries) {
  //        <td>July</td>
  //        <td>Dooley</td>
  //      </tr>
-
-	// for (country of dummyArray) {
-	// 	document.getElementById("countriestable").innerHTML += 
-	// }
+ 	console.log(countries);
+ 	var i = countries.length-2;
+	while (i > 0) {
+		document.getElementById("countriestable").innerHTML = '<tr><td>' + countries[i][0] + '</td><td>'
+		+ countries[i][1] + '</td></tr>' + document.getElementById("countriestable").innerHTML;
+		i--;
+	}
 }
 
 function loadMap() {
