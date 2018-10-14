@@ -210,9 +210,10 @@ app.showFromObject = function () {
 function loadSports() {
 	$.getJSON("Activities.json").done(function(data) {
 		console.log(data.sports);
+		var i = 0;
 		data.sports.forEach(function (element) {
-			console.log(element);
-			document.getElementById("container-box-sports").innerHTML += newBox(element);
+			document.getElementById("container-box-sports").innerHTML += newBox(element, i, 0);
+			i++;
 		});
 	});
 }
@@ -220,19 +221,11 @@ function loadSports() {
 function loadEat() {
 	$.getJSON("Activities.json").done(function(data) {
 		console.log(data.food);
+		var i = 0;
 		data.food.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-eat").innerHTML += newBox(element);
-		});
-	});
-}
-
-function loadTravel() {
-	$.getJSON("Activities.json").done(function(data) {
-		console.log(data.food);
-		data.food.forEach(function (element) {
-			console.log(element);
-			document.getElementById("container-box-travel").innerHTML += newBox(element);
+			document.getElementById("container-box-eat").innerHTML += newBox(element, i, 1);
+			i++;
 		});
 	});
 }
@@ -240,18 +233,77 @@ function loadTravel() {
 function loadParty() {
 	$.getJSON("Activities.json").done(function(data) {
 		console.log(data.party);
+		var i = 0;
 		data.party.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-party").innerHTML += newBox(element);
+			document.getElementById("container-box-party").innerHTML += newBox(element, i, 2);
+			i++;
 		});
 	});
 }
 
+function loadTravel() {
+	$.getJSON("Activities.json").done(function(data) {
+		console.log(data.food);
+		var i = 0;
+		data.food.forEach(function (element) {
+			console.log(element);
+			document.getElementById("container-box-travel").innerHTML += newBox(element, i, 3);
+			i++;
+		});
+	});
+}
 
+function fetchDataOnCard(data, type) {
+	document.getElementById("card_title").innerHTML = data.type;
+	document.getElementById("card_location").innerHTML = "Location: " + data.location;
+	document.getElementById("card_time").innerHTML = "Time: " + data.time;
+	document.getElementById("card_capacity").innerHTML = "Max " + data.maxP + " people";
+	switch (type) {
+		case 0:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/sports2.jpg" alt="Card image cap">';
+			break;
+		case 1:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/food2.jpg" alt="Card image cap">';
+			break;
+		case 2:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/party.jpg" alt="Card image cap">';
+			break;
+		case 3:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/travel.jpg" alt="Card image cap">';
+			break;
+	}
+}
 
-function newBox(activity) {
+function openActivityCard(data, type) {
+	fn.pushPage({'id': 'activityCard.html', 'title': 'Details'}, 'default');
+	setTimeout(function() { fetchDataOnCard(data,type) }, 300);
+
+}
+
+function hola(index, category) {
+	$.getJSON("Activities.json").done(function(data) {
+		switch(category) {
+		    case 0:
+		    	openActivityCard(data.sports[index], category);
+		        break;
+		    case 1:
+		        openActivityCard(data.food[index], category);
+		        break;
+		    case 2:
+		        openActivityCard(data.party[index], category);
+		        break;
+		    default:
+		        openActivityCard(data.party[index], category);
+		        break;
+			}
+		});
+	
+}
+
+function newBox(activity, index, category) {
 	// '<div class="box">' +
-	return '<ons-card style="height: 187px">' +
+	return '<ons-card onclick="hola('+ index + ',' + category +')" style="height: 187px">' +
 	'<div class="title">' + activity.type + "</div>" +
 	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
 	// '<label class="event-description">Testing testing</label>' +

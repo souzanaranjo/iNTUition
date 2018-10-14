@@ -304,4 +304,9 @@ ons-splitter-side[animation=overlay] {
 
 .tab-bar { background-color: #0f2944; }
 
+.activity-card {
+  max-width: 70%;
+  height: auto;
+}
+
 html { overflow-y: hidden; }
