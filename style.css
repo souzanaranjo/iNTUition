@@ -303,7 +303,6 @@ ons-splitter-side[animation=overlay] {
 }
 
 .tab-bar { background-color: #0f2944; }
-<<<<<<< HEAD
 
 .activity-card {
   max-width: 70%;
@@ -311,5 +310,3 @@ ons-splitter-side[animation=overlay] {
 }
 
 html { overflow-y: hidden; }
-=======
->>>>>>> 78c3761486fd8d12c00bcc089793585126e9bc92
