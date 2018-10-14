@@ -196,14 +196,28 @@ app.showFromObject = function () {
     buttons: [
       'WhatsApp',
       'Twitter',
-			'Facebook',
 			'Copy link',
+			'Export to calendar',
       {
         label: 'Cancel',
         icon: 'md-close'
       }
     ]
-  }).then(function (index) { console.log('index: ', index) });
+  }).then(function (index) {
+		console.log('index: ', index);
+		if (index === 3) {
+			cal = ics();
+	    cal.addEvent('Tennis', 'Event for 4 people. Created by Hola App.', 'NTU', '10/15/2018 8:30 pm', '10/15/2018 9:30 pm');
+	    cal.addEvent('Football', 'Event for 16 people. Created by Hola App.', 'NTU', '10/16/2018 4:30 pm', '10/16/2018 5:30 pm');
+	    cal.addEvent('Ping Pong', 'Event for 2 people. Created by Hola App.', 'NTU', '10/15/2018 6:30 pm', '10/15/2018 7:00 pm');
+			cal.addEvent('Volleyball', 'Event for 12 people. Created by Hola App.', 'NTU', '10/17/2018 9:00 am', '10/17/2018 11:00 am');
+			cal.addEvent('Squash', 'Event for 4 people. Created by Hola App.!', 'NTU', '10/17/2018 7:30 pm', '10/17/2018 9:00 pm');
+			cal.addEvent('Cricket', 'Event for 22 people. Created by Hola App.', 'NTU', '10/20/2018 7:30 pm', '10/20/2018 10:00 pm');
+			// cal.download();
+			window.open("calendar.ics");
+		}
+
+	});
 };
 
 
@@ -331,13 +345,31 @@ function showLogin() {
 	modal.innerHTML =
 	'<ons-page>' +
   '		<div class="background" style="background-color: #0f2944;"></div>'+
-	'<img style="margin-top: 50%" src="images/image-2.png" alt="HOLA" height="120px"/>'+
-		'<br>' +
-		'<p><ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>' +
-	    '</p><p>' +
+	'<div style="text-align: center">'+
+	'<img style="margin-top: 50%;" src="images/image-2.png" alt="HOLA" height="120px"/>'+
+		// '<br>' +
+		'<p style="text-align: center"><ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>' +
+	    '</p><p style="text-align: center">' +
 			'<ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>'+
 	   '</p>' +
-		 '<p style="margin-top: 30px;"><ons-button modifier="quiet" onclick="hideModal()">Sign in</ons-button></p>'+
+		 '<p style="margin-top: 30px; text-align: center;"><ons-button modifier="quiet" onclick="hideModal()">Log in</ons-button></p>'+
+		 '</div>'+
 	'</ons-page>';
+}
 
+function showSignup() {
+	var modal = document.querySelector('#initial-modal');
+	modal.innerHTML =
+	'<ons-page>' +
+  '		<div class="background" style="background-color: #0f2944;"></div>'+
+	'<div style="text-align: center">'+
+	'<img style="margin-top: 50%;" src="images/image-2.png" alt="HOLA" height="120px"/>'+
+		// '<br>' +
+		'<p style="text-align: center"><ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>' +
+	    '</p><p style="text-align: center">' +
+			'<ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>'+
+	   '</p>' +
+		 '<p style="margin-top: 30px; text-align: center;"><ons-button modifier="quiet" onclick="hideModal()">Sign up</ons-button></p>'+
+		 '</div>'+
+	'</ons-page>';
 }
