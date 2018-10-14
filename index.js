@@ -447,9 +447,9 @@ function showLogin() {
 	'<div style="text-align: center">'+
 	'<img style="margin-top: 50%;" src="images/image-2.png" alt="HOLA" height="120px"/>'+
 		// '<br>' +
-		'<p style="text-align: center"><ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>' +
-	    '</p><p style="text-align: center">' +
-			'<ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>'+
+		'<p style="text-align: center; color: white"><input type="text" placeholder="Username"></input>' +
+	    '</p><p style="text-align: center; color:white">' +
+			'<input type="password" placeholder="Password"></input>'+
 	   '</p>' +
 		 '<p style="margin-top: 30px; text-align: center;"><ons-button modifier="quiet" onclick="hideModal()">Log in</ons-button></p>'+
 		 '</div>'+

@@ -322,3 +322,13 @@ ons-splitter-side[animation=overlay] {
   max-width: 70%;
   height: auto;
 }
+
+input[type="text"]
+{
+    background: transparent;
+}
+
+input[type="password"]
+{
+    background: transparent;
+}
