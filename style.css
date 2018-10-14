@@ -299,11 +299,12 @@ ons-splitter-side[animation=overlay] {
 }
 
 .next-event {
-	background-color: rgb(117, 255, 121);
+	background-color: rgb(34, 155, 54);
 }
 
 .past-event {
-	background-color: rgb(226, 140, 146);
+	background-color: grey;
+  opacity: 0.4;
 }
 
 .tab-bar { background-color: #0f2944; }

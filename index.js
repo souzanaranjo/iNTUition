@@ -15,7 +15,10 @@ var countries = [
       ['Brazil', 1],
       ['Canada', 1],
       ['France', 1],
-      ['RU', 2]
+      ['Russia', 2],
+      ['Congo', 1],
+      ['Nigeria', 2],
+      ['Venezuela', 3]
 ];
 var user_gender = "Male"
 var tempjson;
@@ -31,12 +34,20 @@ function addEvent() {
 	tempDate = document.getElementById("event_date").value;
 
 	document.getElementById("upcoming_events").innerHTML +=
-	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
-    + '<div class="card next-event" style="text-align: center">'
-    + '<h2 class="card__title">' + tempName + " at " + tempLocation + '</h2>'
-    + '<div class="card__content">'
-    + '<p>' + tempTime + " " + tempDate + '</p>'
-    + '</div></div></div>';
+    '<div class="box" onclick="hola(0, 3)"  style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/travel/Bali.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + tempName + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<div class="box-content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + 10 + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ tempTime + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
 
 }
 
@@ -147,29 +158,54 @@ function loadEvents() {
 	$.getJSON("Activities.json").done(function(data) {
 	console.log(data.sports);
 	document.getElementById("upcoming_events").innerHTML +=
-	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
-    + '<div class="card next-event" style="text-align: center">'
-    + '<h2 class="card__title">' + data.sports[0].type + " at " + data.sports[0].location + '</h2>'
-    + '<div class="card__content">'
-    + '<p>' + data.sports[0].time + '</p>'
-    + '</div></div></div>';
+	'<div class="box" onclick="hola(0,0)" style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/sports/' + data.sports[0].type + '.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + data.sports[0].type + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<div class="box-content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + data.sports[0].maxP + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ data.sports[0].time + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
 
     document.getElementById("past_events").innerHTML +=
-	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
-    + '<div class="card past-event" style="text-align: center">'
-    + '<h2 class="card__title">' + data.food[0].type + " at " + data.food[0].location + '</h2>'
-    + '<div class="card__content">'
-    + '<p>' + data.food[0].time + '</p>'
-    + '</div></div></div>';
+	'<div class="box past-event" onclick="hola(0,1)" style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/food/' + data.food[0].type + '.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + data.food[0].type + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<div class="box-content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + data.food[0].maxP + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ data.food[0].time + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
 
     document.getElementById("past_events").innerHTML +=
-	'<div class="card-format" style="height: 100px; padding: 1px 0 0 0;">'
-    + '<div class="card past-event" style="text-align: center">'
-    + '<h2 class="card__title">' + data.party[0].type + " at " + data.party[0].location + '</h2>'
-    + '<div class="card__content">'
-    + '<p>' + data.party[0].time + '</p>'
-    + '</div></div></div>';
-    });
+	'<div class="box past-event" onclick="hola(0,2)" style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/party/' + data.party[0].type + '.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + data.party[0].type + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<div class="box-content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + data.party[0].maxP + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ data.party[0].time + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
+
+});
 }
 
 function changeCountry() {
