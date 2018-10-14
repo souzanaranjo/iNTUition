@@ -19,7 +19,8 @@ var countries = [
       ['Congo', 1],
       ['Nigeria', 2],
       ['Venezuela', 3],
-      ['Singapore', 2]
+      ['Singapore', 2],
+      ['Mexico',4]
 ];
 var user_gender = "Male"
 var tempjson;
