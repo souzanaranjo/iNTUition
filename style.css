@@ -316,3 +316,8 @@ ons-splitter-side[animation=overlay] {
 .box-content {
   color: white;
 }
+
+.activity-card {
+  max-width: 70%;
+  height: auto;
+}

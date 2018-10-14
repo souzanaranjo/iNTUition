@@ -224,9 +224,12 @@ app.showFromObject = function () {
 function loadSports() {
 	$.getJSON("Activities.json").done(function(data) {
 		console.log(data.sports);
+		var i = 0;
 		data.sports.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-sports").innerHTML += newSportsBox(element);
+			document.getElementById("container-box-sports").innerHTML += newSportsBox(element, i);
+
+			i++;
 		});
 	});
 }
@@ -234,19 +237,13 @@ function loadSports() {
 function loadEat() {
 	$.getJSON("Activities.json").done(function(data) {
 		console.log(data.food);
+		var i = 0;
 		data.food.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-eat").innerHTML += newFoodBox(element);
-		});
-	});
-}
 
-function loadTravel() {
-	$.getJSON("Activities.json").done(function(data) {
-		console.log(data.food);
-		data.food.forEach(function (element) {
-			console.log(element);
-			document.getElementById("container-box-travel").innerHTML += newPartyBox(element);
+			document.getElementById("container-box-eat").innerHTML += newFoodBox(element, i);
+
+			i++;
 		});
 	});
 }
@@ -254,17 +251,76 @@ function loadTravel() {
 function loadParty() {
 	$.getJSON("Activities.json").done(function(data) {
 		console.log(data.party);
+		var i = 0;
 		data.party.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-party").innerHTML += newPartyBox(element);
+			document.getElementById("container-box-travel").innerHTML += newPartyBox(element, i);
+			i++;
 		});
 	});
 }
 
+function loadTravel() {
+	$.getJSON("Activities.json").done(function(data) {
+		console.log(data.food);
+		var i = 0;
+		data.food.forEach(function (element) {
+			console.log(element);
+			document.getElementById("container-box-party").innerHTML += newTravelBox(element, i);
+			i++;
+		});
+	});
+}
 
+function fetchDataOnCard(data, type) {
+	document.getElementById("card_title").innerHTML = data.type;
+	document.getElementById("card_location").innerHTML = "Location: " + data.location;
+	document.getElementById("card_time").innerHTML = "Time: " + data.time;
+	document.getElementById("card_capacity").innerHTML = "Max " + data.maxP + " people";
+	switch (type) {
+		case 0:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/sports2.jpg" alt="Card image cap">';
+			break;
+		case 1:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/food2.jpg" alt="Card image cap">';
+			break;
+		case 2:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/party.jpg" alt="Card image cap">';
+			break;
+		case 3:
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/travel.jpg" alt="Card image cap">';
+			break;
+	}
+}
 
-function newSportsBox(activity) {
-	return '<div class="box" style="background-position: center;background-repeat: no-repeat;' +
+function openActivityCard(data, type) {
+	fn.pushPage({'id': 'activityCard.html', 'title': 'Details'}, 'default');
+	setTimeout(function() { fetchDataOnCard(data,type) }, 300);
+
+}
+
+function hola(index, category) {
+	$.getJSON("Activities.json").done(function(data) {
+		switch(category) {
+		    case 0:
+		    	openActivityCard(data.sports[index], category);
+		        break;
+		    case 1:
+		        openActivityCard(data.food[index], category);
+		        break;
+		    case 2:
+		        openActivityCard(data.party[index], category);
+		        break;
+		    default:
+		        openActivityCard(data.party[index], category);
+		        break;
+			}
+		});
+
+}
+
+function newSportsBox(activity, index) {
+	return '<div class="box" onclick="hola('+ index + ', 0)" style="background-position: center;background-repeat: no-repeat;' +
 	'background-size: cover;background-image: linear-gradient('+
       'rgba(0, 0, 0, 0.1),'+
       'rgba(0, 0, 0, 0.1)'+
@@ -280,8 +336,8 @@ function newSportsBox(activity) {
     +'</div>';
 }
 
-function newFoodBox(activity) {
-	return '<div class="box" style="background-position: center;background-repeat: no-repeat;' +
+function newFoodBox(activity, index) {
+	return '<div class="box" onclick="hola('+ index + ', 1)" style="background-position: center;background-repeat: no-repeat;' +
 	'background-size: cover;background-image: linear-gradient('+
       'rgba(0, 0, 0, 0.1),'+
       'rgba(0, 0, 0, 0.1)'+
@@ -297,12 +353,30 @@ function newFoodBox(activity) {
     +'</div>';
 }
 
-function newPartyBox(activity) {
-	return '<div class="box" style="background-position: center;background-repeat: no-repeat;' +
+
+function newPartyBox(activity, index) {
+	return '<div class="box" onclick="hola('+ index + ', 2)" style="background-position: center;background-repeat: no-repeat;' +
 	'background-size: cover;background-image: linear-gradient('+
       'rgba(0, 0, 0, 0.1),'+
       'rgba(0, 0, 0, 0.1)'+
     '),url(images/categories/party/' + activity.type + '.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + activity.type + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<div class="box-content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + activity.maxP + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ activity.time + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
+}
+
+function newTravelBox(activity, index) {
+	return '<div class="box" onclick="hola('+ index + ', 3)" style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/travel/' + activity.type + '.jpg)">' +
 	// return '<ons-card style="height: 187px">' +
 	'<div class="box-title">' + activity.type + "</div>" +
 	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
