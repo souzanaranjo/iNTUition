@@ -262,11 +262,11 @@ function loadParty() {
 
 function loadTravel() {
 	$.getJSON("Activities.json").done(function(data) {
-		console.log(data.food);
+		console.log(data.travel);
 		var i = 0;
 		data.food.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-party").innerHTML += newTravelBox(element, i);
+			document.getElementById("container-box-travel").innerHTML += newTravelBox(element, i);
 			i++;
 		});
 	});

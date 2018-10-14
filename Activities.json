@@ -110,6 +110,43 @@
 			"location": "NTU",
 			"maxP": 4
 		}
-	]
+	],
+	"travel": [{
+		"type": "Bali",
+		"time": "8:30 Monday, October 15th",
+		"location": "Bali",
+		"maxP": 4
+	},
+	{
+		"type": "Tokyo",
+		"time": "16:00 Tuesday, October 16th",
+		"location": "Tokyo",
+		"maxP": 6
+	},
+	{
+		"type": "Jakarta",
+		"time": "8:30 Monday, October 15th",
+		"location": "Jakarta",
+		"maxP": 2
+	},
+	{
+		"type": "Manila",
+		"time": "9:00 Wednesday, October 17th",
+		"location": "Manila",
+		"maxP": 5
+	},
+	{
+		"type": "Bangkok",
+		"time": "7:30 Wednesday, October 17th",
+		"location": "Bangkok",
+		"maxP": 4
+	},
+	{
+		"type": "Krabi",
+		"time": "7:30 Saturday, October 20th",
+		"location": "NTU",
+		"maxP": 8
+	}
+]
 
 }
