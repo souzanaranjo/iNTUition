@@ -194,15 +194,51 @@
         <ons-toolbar-button onclick="app.showFromObject()">Share</ons-toolbar-button>
       </div>
     </ons-toolbar>
-    <div class="content" style="text-align: center">
+    <div class="content" style="text-align: center; height: 100%;">
       <div class="card" style="width: 90%; margin-left: 5%; text-align: center">
           <span style="width: 100%;" id="card_image"></span>
           <div class="card-body">
-            <h5 id="card_title" class="card-title">Card title</h5>
+            <h3 id="card_title" class="card-title">Card title</h3>
             <p id="card_location"></p>
             <p id="card_time"></p>
             <p id="card_capacity"></p>
-            <a href="#" class="btn btn-primary">Register</a>
+            <ons-list>
+              <ons-list-header>Participants</ons-list-header>
+              <ons-list-item>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="images/people/1.jpg">
+                </div>
+                <div class="center">
+                  <span class="list-item__title">Stephen Vance</span><span class="list-item__subtitle">Follows you</span>
+                </div>
+                <div class="right">
+                  <ons-button name="button">Follow</ons-button>
+                </div>
+              </ons-list-item>
+              <ons-list-item>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="images/people/0.jpg">
+                </div>
+                <div class="center">
+                  <span class="list-item__title">Diana Ross</span><span class="list-item__subtitle">Following</span>
+                </div>
+                <div class="right">
+                  <ons-button name="button" modifier="quiet">Unfollow</ons-button>
+                </div>
+              </ons-list-item>
+              <ons-list-item>
+                <div class="left">
+                  <img class="list-item__thumbnail" src="images/people/2.jpg">
+                </div>
+                <div class="center">
+                  <span class="list-item__title">Leah	Martin</span><span class="list-item__subtitle"></span>
+                </div>
+                <div class="right">
+                  <ons-button name="button">Follow</ons-button>
+                </div>
+              </ons-list-item>
+            </ons-list>
+            <a style="margin-top: 10px" href="#" class="btn btn-primary">Register</a>
           </div>
       </div>
     </div>
@@ -351,6 +387,10 @@
     <div class="background" style="background-color: #0f2944;"></div>
     <div style="height: 10%;">
     <ons-toolbar modifier="transparent">
+      <div class="left">
+        <ons-toolbar-button onclick="app.showFromObject()">Share</ons-toolbar-button>
+
+      </div>
         <div class="center">
           <img style="padding-bottom: 20px" src="images/image-2.png" alt="HOLA" height="80px"/>
         </div>
