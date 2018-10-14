@@ -254,7 +254,7 @@ function loadParty() {
 		var i = 0;
 		data.party.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-travel").innerHTML += newPartyBox(element, i);
+			document.getElementById("container-box-party").innerHTML += newPartyBox(element, i);
 			i++;
 		});
 	});
@@ -264,7 +264,7 @@ function loadTravel() {
 	$.getJSON("Activities.json").done(function(data) {
 		console.log(data.travel);
 		var i = 0;
-		data.food.forEach(function (element) {
+		data.travel.forEach(function (element) {
 			console.log(element);
 			document.getElementById("container-box-travel").innerHTML += newTravelBox(element, i);
 			i++;
@@ -277,18 +277,19 @@ function fetchDataOnCard(data, type) {
 	document.getElementById("card_location").innerHTML = "Location: " + data.location;
 	document.getElementById("card_time").innerHTML = "Time: " + data.time;
 	document.getElementById("card_capacity").innerHTML = "Max " + data.maxP + " people";
+
 	switch (type) {
 		case 0:
-			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/sports2.jpg" alt="Card image cap">';
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/sports/'+ data.type + '.jpg" alt="Card image cap">';
 			break;
 		case 1:
-			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/food2.jpg" alt="Card image cap">';
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/food/'+ data.type + '.jpg" alt="Card image cap">';
 			break;
 		case 2:
-			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/party.jpg" alt="Card image cap">';
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/party/'+ data.type + '.jpg" alt="Card image cap">';
 			break;
 		case 3:
-			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/travel.jpg" alt="Card image cap">';
+			document.getElementById("card_image").innerHTML = '<img class="activity-card card-img-top" src="images/categories/travel/' + data.type + '.jpg" alt="Card image cap">';
 			break;
 	}
 }
@@ -312,7 +313,7 @@ function hola(index, category) {
 		        openActivityCard(data.party[index], category);
 		        break;
 		    default:
-		        openActivityCard(data.party[index], category);
+		        openActivityCard(data.travel[index], category);
 		        break;
 			}
 		});
