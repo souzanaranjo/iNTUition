@@ -134,16 +134,17 @@ ons-splitter-side[animation=overlay] {
   .cols {
       -moz-column-count:2;
       -moz-column-gap: 0%;
-      -moz-column-width: 50%;
+      -moz-column-width: 49%;
       -webkit-column-count:2;
       -webkit-column-gap: 0%;
-      -webkit-column-width: 50%;
+      -webkit-column-width: 49%;
       column-count: 2;
       column-gap: 0%;
-      column-width: 50%;
+      column-width: 49%;
   }
   .box {
-      margin: 3px;
+      padding: 5px;
+      margin: 1px;
       height: 187px;
       background:#BFBFBF;
       width: 100%;
@@ -168,7 +169,7 @@ ons-splitter-side[animation=overlay] {
     font-family: 'cursive'!important;
     color: white;
     text-align: center !important;
-    font-size: 500px !important;
+    margin-bottom: 6px;
   }
 
   #eat-category {
@@ -183,6 +184,7 @@ ons-splitter-side[animation=overlay] {
     background-size: 100%;
     font-family: 'cursive'!important;
     text-align: center !important;
+    margin-bottom: 6px;
   }
 
   #party-category {
@@ -197,6 +199,7 @@ ons-splitter-side[animation=overlay] {
     background-size: 100%;
     font-family: 'cursive';
     text-align: center;
+    margin-bottom: 6px;
   }
 
   #travel-category {
@@ -212,6 +215,7 @@ ons-splitter-side[animation=overlay] {
     font-family: 'cursive';
     text-align: center;
     font-size: 75%;
+    margin-bottom: 6px;
   }
 
 #discover-container {
@@ -303,3 +307,12 @@ ons-splitter-side[animation=overlay] {
 }
 
 .tab-bar { background-color: #0f2944; }
+
+.box-title {
+  color: white;
+  font-size: 20px;
+}
+
+.box-content {
+  color: white;
+}

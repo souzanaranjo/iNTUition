@@ -226,7 +226,7 @@ function loadSports() {
 		console.log(data.sports);
 		data.sports.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-sports").innerHTML += newBox(element);
+			document.getElementById("container-box-sports").innerHTML += newSportsBox(element);
 		});
 	});
 }
@@ -236,7 +236,7 @@ function loadEat() {
 		console.log(data.food);
 		data.food.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-eat").innerHTML += newBox(element);
+			document.getElementById("container-box-eat").innerHTML += newFoodBox(element);
 		});
 	});
 }
@@ -246,7 +246,7 @@ function loadTravel() {
 		console.log(data.food);
 		data.food.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-travel").innerHTML += newBox(element);
+			document.getElementById("container-box-travel").innerHTML += newPartyBox(element);
 		});
 	});
 }
@@ -256,24 +256,62 @@ function loadParty() {
 		console.log(data.party);
 		data.party.forEach(function (element) {
 			console.log(element);
-			document.getElementById("container-box-party").innerHTML += newBox(element);
+			document.getElementById("container-box-party").innerHTML += newPartyBox(element);
 		});
 	});
 }
 
 
 
-function newBox(activity) {
-	// '<div class="box">' +
-	return '<ons-card style="height: 187px">' +
-	'<div class="title">' + activity.type + "</div>" +
+function newSportsBox(activity) {
+	return '<div class="box" style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/sports/' + activity.type + '.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + activity.type + "</div>" +
 	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
 	// '<label class="event-description">Testing testing</label>' +
-	'<div class="content">' +
+	'<div class="box-content">' +
 	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + activity.maxP + '</label><br>' +
 	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
-	+ activity.time + '</label>' + '</div>' + '</ons-card>';// +
-    // '</div>';
+	+ activity.time + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
+}
+
+function newFoodBox(activity) {
+	return '<div class="box" style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/food/' + activity.type + '.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + activity.type + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<div class="box-content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + activity.maxP + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ activity.time + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
+}
+
+function newPartyBox(activity) {
+	return '<div class="box" style="background-position: center;background-repeat: no-repeat;' +
+	'background-size: cover;background-image: linear-gradient('+
+      'rgba(0, 0, 0, 0.1),'+
+      'rgba(0, 0, 0, 0.1)'+
+    '),url(images/categories/party/' + activity.type + '.jpg)">' +
+	// return '<ons-card style="height: 187px">' +
+	'<div class="box-title">' + activity.type + "</div>" +
+	// '<p style="font-size: 30px" class="event-title">' + activity.type + '</p>' +
+	// '<label class="event-description">Testing testing</label>' +
+	'<div class="box-content">' +
+	'<label class="event-people">' +'<ons-icon style="margin-right: 5px" icon="fa-users"></ons-icon>' + activity.maxP + '</label><br>' +
+	'<label class="event-date">  <ons-icon style="margin-right: 5px" icon="fa-clock"></ons-icon>   '
+	+ activity.time + '</label>' + '</div>' //+ '</ons-card>';// +
+    +'</div>';
 }
 
 function showModal() {

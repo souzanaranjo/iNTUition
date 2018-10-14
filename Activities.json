@@ -12,7 +12,7 @@
 			"maxP": 16
 		},
 		{
-			"type": "Ping Pong",
+			"type": "Ping_Pong",
 			"time": "8:30 Monday, October 15th",
 			"location": "NTU",
 			"maxP": 2
@@ -56,7 +56,7 @@
 			"maxP": 6
 		},
 		{
-			"type": "Fast Food",
+			"type": "Fast_Food",
 			"time": "11:00 17.10.2018",
 			"location": "NTU",
 			"maxP": 4
@@ -75,13 +75,13 @@
 		}
 	],
 	"party": [{
-			"type": "Welcome Party",
+			"type": "Welcome",
 			"time": "21:00 Monday, October 15th",
 			"location": "Zouk",
 			"maxP": 7
 		},
 		{
-			"type": "Kilo Lounge",
+			"type": "Kilo",
 			"time": "20:00 16.10.2018",
 			"location": "NTU",
 			"maxP": 9
@@ -93,13 +93,13 @@
 			"maxP": 6
 		},
 		{
-			"type": "Trace Club",
+			"type": "Trace",
 			"time": "22:00 17.10.2018",
 			"location": "NTU",
 			"maxP": 4
 		},
 		{
-			"type": "Club Kyo",
+			"type": "Kyo",
 			"time": "19:30 18.10.2018",
 			"location": "NTU",
 			"maxP": 5
