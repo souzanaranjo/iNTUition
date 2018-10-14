@@ -156,9 +156,9 @@ ons-splitter-side[animation=overlay] {
   }
 
   #sports-category {
-    background: 
+    background:
   linear-gradient(
-      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
     url("images/categories/sports2.jpg");
@@ -172,11 +172,11 @@ ons-splitter-side[animation=overlay] {
   }
 
   #eat-category {
-    background: 
+    background:
   linear-gradient(
-      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
-    ), 
+    ),
     url("images/categories/food2.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -186,9 +186,9 @@ ons-splitter-side[animation=overlay] {
   }
 
   #party-category {
-    background: 
+    background:
   linear-gradient(
-      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
     url("images/categories/party.jpg");
@@ -200,9 +200,9 @@ ons-splitter-side[animation=overlay] {
   }
 
   #travel-category {
-    background: 
+    background:
   linear-gradient(
-      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.1)
     ),
     url("images/categories/travel.jpg");
@@ -220,7 +220,7 @@ ons-splitter-side[animation=overlay] {
 
  .content {
 	height: 100%;
-} 
+}
 
  .categories {
 	height: 100%;
@@ -228,12 +228,12 @@ ons-splitter-side[animation=overlay] {
 	font-size: 6em;
 	font-style: italic;
 	color: black;
-} 
+}
 
 #sport-button {
-  background: 
+  background:
   linear-gradient(
-      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ),
 	url(images/categories/sports2.jpg);
@@ -241,14 +241,14 @@ ons-splitter-side[animation=overlay] {
   background-repeat: no-repeat;
   background-size: 100%;
   font-family: 'cursive';
-  
+
   color: white;
 }
 
 #eat-button {
-  background: 
+  background:
   linear-gradient(
-      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ),
   url(images/categories/food2.jpg);
@@ -259,9 +259,9 @@ ons-splitter-side[animation=overlay] {
   color: white;}
 
 #party-button {
-	background: 
+	background:
   linear-gradient(
-      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ),
   url(images/categories/party.jpg);
@@ -273,9 +273,9 @@ ons-splitter-side[animation=overlay] {
   }
 
 #travel-button {
-  background: 
+  background:
   linear-gradient(
-      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ),
   url(images/categories/travel.jpg);
@@ -303,5 +303,3 @@ ons-splitter-side[animation=overlay] {
 }
 
 .tab-bar { background-color: #0f2944; }
-
-html { overflow-y: hidden; }
